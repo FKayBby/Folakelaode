@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Folake Laode</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff8e1; /* soft mustard background */
+      color: #222;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px 50px;
+      background: #ff9800; /* deep orange */
+      color: white;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: black;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    a.button {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 1em;
+      color: white;
+      background: #ffb300; /* mustard yellow */
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin: 10px;
+    }
+    a.button:hover {
+      background: #f57c00; /* darker orange on hover */
+    }
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    section img {
+      width: 250px;
+      height: auto;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+    }
+    h2 {
+      color: #f57c00; /* orange accent */
+      margin-bottom: 20px;
+    }
+    ul.services {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+    ul.services li {
+      margin: 8px 0;
+      padding: 10px;
+      background: #fff3cd;
+      border-left: 5px solid #ff9800;
+      border-radius: 6px;
+    }
+    footer {
+      margin-top: 100px;
+      padding: 20px;
+      font-size: 0.9em;
+      background: black;
+      color: #ffb300; /* mustard text */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hello, I’m Folake Laode</h1>
+    <p>Professional MC & Compere • Creating unforgettable experiences</p>
+    <a href="mailto:hello@folakelaode.com.ng" class="button">📩 Contact Me</a>
+    <a href="https://wa.me/2348115017713" target="_blank" class="button">💬 Chat on WhatsApp</a>
+  </header>
+
+  <section>
+    <img src="my-photo.jpg" alt="Folake Laode">
+    <h2>About Me</h2>
+    <p>
+      I am Folake Laode, a professional Master of Ceremonies and compere with a passion for creating 
+      unforgettable experiences on stage. With a natural flair for connecting with audiences, I bring 
+      energy, elegance, and professionalism to every event — whether corporate functions, weddings, 
+      or social gatherings. My goal is simple: to make every moment engaging, seamless, and memorable.
+    </p>
+    <a href="mailto:hello@folakelaode.com.ng" class="button">📩 Book Me</a>
+    <a href="https://wa.me/2348115017713" target="_blank" class="button">💬 WhatsApp Me</a>
+  </section>
+
+  <section>
+    <h2>My Services</h2>
+    <ul class="services">
+      <li>🎤 Conferences & Corporate Events</li>
+      <li>📚 Book & Product Launches</li>
+      <li>🎉 Reunions & Private Parties</li>
+      <li>🍽️ Dinners & Banquets</li>
+      <li>🎂 Birthdays & Anniversaries</li>
+      <li>💍 Weddings & Engagements</li>
+      <li>🏫 School Functions & Graduations</li>
+      <li>🗣️ Public Speaking Engagements</li>
+      <li>✨ And much more...</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Folake Laode. All rights reserved.
+  </footer>
+
+  <script>
+    // Auto-update year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
