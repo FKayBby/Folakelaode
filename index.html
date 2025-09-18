@@ -90,7 +90,7 @@
 
     /* Hero */
     header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('folake.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/folake.jpg') center/cover no-repeat;
       color: white;
       text-align: center;
       padding: 120px 20px;
@@ -139,25 +139,16 @@
       font-size: 2rem;
     }
 
-    /* Services */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .service-box {
-      background: #f9f9f9;
-      border: 2px solid #ffb400;
-      padding: 20px;
-      border-radius: 10px;
+    /* Services List */
+    .services-list {
       text-align: center;
-      transition: transform 0.3s;
       font-weight: bold;
+      font-size: 1.1rem;
+      color: #111;
     }
 
-    .service-box:hover {
-      transform: scale(1.05);
+    .services-list span {
+      color: #ffb400;
     }
 
     /* Contact */
@@ -217,17 +208,11 @@
   <!-- Services Section -->
   <section id="services">
     <h2>Services</h2>
-    <div class="services">
-      <div class="service-box">Corporate Events</div>
-      <div class="service-box">Book & Product Launches</div>
-      <div class="service-box">Reunion Parties</div>
-      <div class="service-box">Dinners & Galas</div>
-      <div class="service-box">Birthdays</div>
-      <div class="service-box">Weddings</div>
-      <div class="service-box">School Functions</div>
-      <div class="service-box">Public Speaking</div>
-      <div class="service-box">And More...</div>
-    </div>
+    <p class="services-list">
+      Corporate Events <span>|</span> Dinners & Galas <span>|</span> Weddings <span>|</span>
+      Birthdays <span>|</span> School Functions <span>|</span> Book & Product Launches <span>|</span>
+      Reunion Parties <span>|</span> Public Speaking <span>|</span> And More...
+    </p>
   </section>
 
   <!-- Contact Section -->
