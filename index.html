@@ -1,157 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Folake Laode - Professional MC & Compere</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Folake Laode | Professional MC & Compere</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff8e1; /* soft mustard */
+      font-family: Arial, sans-serif;
+      background: #fff;
       color: #222;
+      line-height: 1.6;
     }
-    header {
-      text-align: center;
-      padding: 80px 20px 50px;
-      background: #ff9800; /* deep orange */
-      color: white;
+
+    /* Navigation */
+    nav {
+      background: #111;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      color: black;
+
+    nav .logo {
+      color: #ffb400;
+      font-size: 1.3rem;
+      font-weight: bold;
     }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+
+    nav ul {
+      list-style: none;
+      display: flex;
     }
-    a.button {
-      display: inline-block;
-      padding: 12px 25px;
-      font-size: 1em;
-      color: white;
-      background: #ffb300; /* mustard yellow */
-      border-radius: 6px;
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #ffb400;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
-      margin: 10px;
+      transition: color 0.3s;
     }
-    a.button:hover {
-      background: #f57c00; /* darker orange */
+
+    nav ul li a:hover {
+      color: #e65100;
     }
-    section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
+
+    /* Mobile Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #ffb400;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        width: 200px;
+        text-align: right;
+        padding: 10px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Hero */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('folake.jpg') center/cover no-repeat;
+      color: white;
       text-align: center;
+      padding: 120px 20px;
     }
-    section img {
-      width: 250px;
-      height: auto;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+
+    header h1 {
+      font-size: 3rem;
+      color: #ffb400;
     }
-    h2 {
-      color: #f57c00;
-      margin-bottom: 20px;
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      color: #f5f5f5;
+      font-style: italic;
     }
-    ul.services {
-      list-style: none;
-      padding: 0;
-      font-size: 1.1em;
-      line-height: 1.8;
-    }
-    ul.services li {
-      margin: 8px 0;
-      padding: 10px;
-      background: #fff3cd;
-      border-left: 5px solid #ff9800;
-      border-radius: 6px;
-      text-align: left;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
+
+    .cta-btn {
+      display: inline-block;
       margin-top: 20px;
+      background: #ffb400;
+      color: #111;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
     }
-    .gallery img {
-      width: 100%;
-      height: auto;
+
+    .cta-btn:hover {
+      background: #e65100;
+      color: #fff;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #e65100;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-box {
+      background: #f9f9f9;
+      border: 2px solid #ffb400;
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      text-align: center;
+      transition: transform 0.3s;
+      font-weight: bold;
     }
-    .gallery img:hover {
+
+    .service-box:hover {
       transform: scale(1.05);
     }
-    footer {
-      margin-top: 100px;
-      padding: 20px;
-      font-size: 0.9em;
-      background: black;
-      color: #ffb300;
+
+    /* Contact */
+    #contact p {
       text-align: center;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #ffb400;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Folake Laode</div>
+    <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
   <header>
-    <h1>Hello, I’m Folake Laode</h1>
-    <p>Professional MC & Compere • Creating unforgettable experiences</p>
-    <a href="mailto:hello@folakelaode.com.ng" class="button">📩 Contact Me</a>
-    <a href="https://wa.me/2348115017713" target="_blank" class="button">💬 Chat on WhatsApp</a>
+    <h1>Folake Laode</h1>
+    <p>Memorable Moments, Masterfully Hosted</p>
+    <a href="mailto:booking@folakelaode.com" class="cta-btn">Book Me Now</a>
   </header>
 
-  <section>
-    <img src="my-photo.jpg" alt="Folake Laode">
+  <!-- About Section -->
+  <section id="about">
     <h2>About Me</h2>
     <p>
-      I am Folake Laode, a professional Master of Ceremonies and compere with a passion for creating 
-      unforgettable experiences on stage. With a natural flair for connecting with audiences, I bring 
-      energy, elegance, and professionalism to every event — whether corporate functions, weddings, 
-      or social gatherings. My goal is simple: to make every moment engaging, seamless, and memorable.
+      I am a versatile and vibrant professional MC and compere, bringing elegance, energy,
+      and excellence to every stage I grace. From corporate events to weddings, I create
+      unforgettable moments with a touch of class.
     </p>
-    <a href="mailto:hello@folakelaode.com.ng" class="button">📩 Book Me</a>
-    <a href="https://wa.me/2348115017713" target="_blank" class="button">💬 WhatsApp Me</a>
   </section>
 
-  <section>
-    <h2>My Services</h2>
-    <ul class="services">
-      <li>🎤 Conferences & Corporate Events</li>
-      <li>📚 Book & Product Launches</li>
-      <li>🎉 Reunions & Private Parties</li>
-      <li>🍽️ Dinners & Banquets</li>
-      <li>🎂 Birthdays & Anniversaries</li>
-      <li>💍 Weddings & Engagements</li>
-      <li>🏫 School Functions & Graduations</li>
-      <li>🗣️ Public Speaking Engagements</li>
-      <li>✨ And much more...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Gallery</h2>
-    <p>A glimpse of moments I’ve hosted and created unforgettable experiences.</p>
-    <div class="gallery">
-      <img src="gallery1.jpg" alt="Folake hosting a conference">
-      <img src="gallery2.jpg" alt="Folake at a wedding reception">
-      <img src="gallery3.jpg" alt="Folake speaking at a product launch">
-      <img src="gallery4.jpg" alt="Folake MC at a birthday party">
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Services</h2>
+    <div class="services">
+      <div class="service-box">Corporate Events</div>
+      <div class="service-box">Book & Product Launches</div>
+      <div class="service-box">Reunion Parties</div>
+      <div class="service-box">Dinners & Galas</div>
+      <div class="service-box">Birthdays</div>
+      <div class="service-box">Weddings</div>
+      <div class="service-box">School Functions</div>
+      <div class="service-box">Public Speaking</div>
+      <div class="service-box">And More...</div>
     </div>
   </section>
 
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      📞 08115017713 <br />
+      📧 <a href="mailto:booking@folakelaode.com">booking@folakelaode.com</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    &copy; <span id="year"></span> Folake Laode. All rights reserved.
+    <p>© 2025 Folake Laode | All Rights Reserved</p>
   </footer>
 
+  <!-- JS for menu -->
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
