@@ -1,247 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Folake Laode | Professional MC & Compere</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Folake Laode - Professional MC & Compere</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #111;
+      background-color: #000; /* BLACK */
+      color: #fff;
       line-height: 1.6;
     }
 
-    /* Navigation */
-    nav {
-      background: #111;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav .logo {
-      color: #ffb400;
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-    }
-
-    nav ul li {
-      margin-left: 20px;
-    }
-
-    nav ul li a {
-      color: #ffb400;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #e65100;
-    }
-
-    /* Mobile Menu */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background: #ffb400;
-      margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: #111;
-        position: absolute;
-        top: 55px;
-        right: 0;
-        width: 200px;
-        text-align: right;
-        padding: 10px;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    /* Hero */
     header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/folake.jpg') center/cover no-repeat;
-      color: white;
+      background: linear-gradient(90deg, #ffdb58, #ff8c00); /* MUSTARD → ORANGE */
+      color: #000;
       text-align: center;
-      padding: 120px 20px;
+      padding: 2rem 1rem;
     }
 
     header h1 {
-      font-size: 3rem;
-      color: #ffb400;
+      font-size: 2rem;
+      font-weight: bold;
     }
 
     header p {
-      font-size: 1.3rem;
-      margin-top: 10px;
-      color: #f5f5f5;
+      font-size: 1.2rem;
       font-style: italic;
     }
 
-    .cta-btn {
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #000;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .hero img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 6px solid #ffdb58; /* MUSTARD BORDER */
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      color: #ffdb58; /* MUSTARD */
+    }
+
+    .services {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .services h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #ff8c00; /* ORANGE */
+    }
+
+    .service-item {
+      background: #ff8c00; /* ORANGE */
+      color: #fff; /* WHITE */
+      padding: 15px;
+      margin: 10px 0;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .service-item:hover {
+      background: #ffdb58; /* MUSTARD on hover */
+      color: #000; /* BLACK text on hover for contrast */
+    }
+
+    .contact {
+      background: #000;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .contact h3 {
+      color: #ffdb58;
+      margin-bottom: 1rem;
+    }
+
+    .contact a {
       display: inline-block;
-      margin-top: 20px;
-      background: #ffb400;
-      color: #111;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .cta-btn:hover {
-      background: #e65100;
+      margin: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      background: #ff8c00;
       color: #fff;
-    }
-
-    /* Sections */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section h2 {
-      color: #e65100;
-      margin-bottom: 20px;
-      text-align: center;
-      font-size: 2rem;
-    }
-
-    /* Services List */
-    .services-list {
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: #111;
-    }
-
-    .services-list span {
-      color: #ffb400;
-    }
-
-    /* Contact */
-    #contact p {
-      text-align: center;
-      font-size: 1.1rem;
-    }
-
-    #contact a {
-      color: #e65100;
       text-decoration: none;
+      border-radius: 5px;
       font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .contact a:hover {
+      background: #ffdb58;
+      color: #000;
     }
 
     footer {
       background: #111;
-      color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 1rem;
+      color: #aaa;
+      font-size: 0.9rem;
     }
 
-    footer a {
-      color: #ffb400;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">Folake Laode</div>
-    <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <header>
-    <h1>Folake Laode</h1>
-    <p>Memorable Moments, Masterfully Hosted</p>
-    <a href="mailto:booking@folakelaode.com" class="cta-btn">Book Me Now</a>
-  </header>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a versatile and vibrant professional MC and compere, bringing elegance, energy,
-      and excellence to every stage I grace. From corporate events to weddings, I create
-      unforgettable moments with a touch of class.
-    </p>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Services</h2>
-    <p class="services-list">
-      Corporate Events <span>|</span> Dinners & Galas <span>|</span> Weddings <span>|</span>
-      Birthdays <span>|</span> School Functions <span>|</span> Book & Product Launches <span>|</span>
-      Reunion Parties <span>|</span> Public Speaking <span>|</span> And More...
-    </p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      📞 <a href="tel:08115017713">08115017713</a> <br />
-      📧 <a href="mailto:booking@folakelaode.com">booking@folakelaode.com</a>
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Folake Laode | All Rights Reserved</p>
-  </footer>
-
-  <!-- JS for menu -->
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('nav ul');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-</body>
-</html>
+    /* MOBILE */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .hero h2
