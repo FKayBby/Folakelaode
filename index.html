@@ -1,202 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Folake Laode - Master of Ceremony</title>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
-<style>
-  body {
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
-    background-color: #ffffff;
-    color: #333;
-  }
-
-  header {
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-
-  header h1 {
-    font-size: 2.5em;
-    color: #000;
-    margin: 0;
-    letter-spacing: 2px;
-  }
-
-  /* Profile picture styling */
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 10px;
-    border: 3px solid #ccc;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  nav a {
-    color: #ff6600;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  nav a:hover {
-    color: #ff9900;
-  }
-
-  /* Responsive menu toggle */
-  @media(max-width: 768px){
-    nav {
-      display: none;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials & Video Section</title>
+  <style>
+    /* Basic Reset and Body Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      /* Set your background image here */
+      background-image: url('YOUR_BACKGROUND_IMAGE_URL');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative;
     }
-    .menu-toggle {
-      display: block;
-      cursor: pointer;
-      font-size: 1.2em;
-      color: #ff6600;
-      margin-top: 10px;
+
+    /* Faint Dark Overlay over the background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+      z-index: -1;
+    }
+
+    /* Main container for content */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 20px;
+      color: #fff; /* Text color for contrast */
+    }
+
+    /* Section Titles */
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Testimonials styling */
+    .testimonials {
+      background-color: rgba(17, 17, 17, 0.6); /* Faint dark background for testimonials */
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 50px;
+    }
+
+    .testimonial {
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    /* Video section styling */
+    .video-section {
       text-align: center;
     }
-  }
 
-  section {
-    padding: 40px 20px;
-    background-color: #fff;
-    margin: 20px auto;
-    max-width: 1000px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-
-  h2 {
-    color: #ff6600;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ff6600;
-    padding-bottom: 10px;
-  }
-
-  /* Get in touch button */
-  .get-in-touch-btn {
-    display: inline-block;
-    background-color: #ff6600;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-    text-align: center;
-    margin-top: 20px;
-    text-decoration: none;
-  }
-
-  /* Contact details list style */
-  .contact-details {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .contact-details li {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-  }
-
-  .contact-details li span {
-    margin-left: 10px;
-  }
-  /* For clickable phone and email */
-  .clickable {
-    color: #0066cc;
-    text-decoration: underline;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    margin-top: 20px;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-  }
-</style>
+    /* Video styling */
+    video {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- Main Heading -->
+    <h1>Customer Testimonials & Our Story</h1>
 
-<header>
-  <h1>Folake Laode</h1>
-  <!-- Your profile picture -->
-  <img src="YOUR_IMAGE_URL_HERE" alt="Folake Laode" class="profile-pic" />
-  <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
-  <nav id="navLinks">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#get-in-touch">Get In Touch</a>
-  </nav>
-</header>
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonial">
+        <p>"This service exceeded my expectations! Highly recommend to everyone."</p>
+        <strong>- Satisfied Customer</strong>
+      </div>
+      <div class="testimonial">
+        <p>"An exceptional experience from start to finish."</p>
+        <strong>- Happy Client</strong>
+      </div>
+      <div class="testimonial">
+        <p>"Quality and support that truly stand out."</p>
+        <strong>- Loyal Customer</strong>
+      </div>
+    </div>
 
-<section id="about">
-  <h2>About Folake Laode</h2>
-  <p>Mojibade Sosanya, also known as the LadyMC with an M.Sc, is a multi-talented professional with a diverse background in event hosting, TV presenting, corporate communications, acting, public speaking, and influencing. She earned her first degree from Covenant University and an M.Sc from the School of Media and Communications at Pan Atlantic University, Nigeria. With extensive experience as an Event Host, she is dedicated to inspiring people to reach their full potential.</p>
-  <a href="#get-in-touch" class="get-in-touch-btn">Get In Touch</a>
-</section>
-
-<section id="services">
-  <h2>Services</h2>
-  <p style="font-size:1.2em; line-height:1.5;">Corporate Events | Dinner and Galas | Book and product launches | Wedding and birthdays | School functions | Public Speaking engagements and much more</p>
-</section>
-
-<!-- Optional: Gallery section -->
-<!--
-<section id="gallery">
-  <h2>Gallery</h2>
-  <p>Include your gallery images here.</p>
-</section>
--->
-
-<section id="get-in-touch" style="background-color:#fff;">
-  <h2 style="text-align:center;">Get In Touch</h2>
-  <ul class="contact-details" style="max-width:600px; margin:auto;">
-    <li>
-      <strong>Phone:</strong>
-      <a class="clickable" href="tel:08115017713">08115017713</a>
-    </li>
-    <li>
-      <strong>Phone:</strong>
-      <a class="clickable" href="tel:09063127175">09063127175</a>
-    </li>
-    <li>
-      <strong>Email:</strong>
-      <a class="clickable" href="mailto:booking@folakelaode.com">booking@folakelaode.com</a>
-    </li>
-  </ul>
-</section>
-
-<footer>
-  <p>&copy; 2024 Folake Laode. All rights reserved.</p>
-</footer>
-
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    if (nav.style.display === 'block') {
-      nav.style.display = 'none';
-    } else {
-      nav.style.display = 'block';
-    }
-  }
-</script>
-
+    <!-- Video Section -->
+    <div class="video-section">
+      <h2>Watch Our Story</h2>
+      <video controls>
+        <source src="YOUR_VIDEO_URL.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
 </body>
 </html>
