@@ -1,190 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Folake Laode - Professional MC & Compere</title>
-  <style>
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mojibade Show - The LadyMC</title>
+<!-- Google Fonts for stylish typography -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fffefb;
+    color: #000;
+  }
 
-    body {
-      background-color: #000; /* Black */
-      color: #fff;
-      line-height: 1.6;
-    }
+  /* Header styles */
+  header {
+    background: linear-gradient(45deg, #FFA500, #FFCC00);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-    header {
-      background: linear-gradient(90deg, #ffdb58, #ff8c00); /* Mustard → Orange */
-      color: #000; /* Black text */
-      text-align: center;
-      padding: 2rem 1rem;
-    }
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    color: #000;
+  }
 
-    header h1 {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #000; /* Black */
-    }
+  nav {
+    display: flex;
+    gap: 15px;
+  }
 
-    header p {
-      font-size: 1.2rem;
-      font-style: italic;
-      color: #000; /* Black */
-    }
+  nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
 
+  nav a:hover {
+    color: #FF8C00;
+  }
+
+  /* Hero section */
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  /* Section styles */
+  section {
+    padding: 40px 20px;
+  }
+
+  #about {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Services with full caps and light orange background */
+  #services {
+    background-color: #ffe0b2; /* Light orange */
+    text-align: center;
+  }
+
+  #services h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .service-item {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-weight: bold;
+  }
+
+  /* Contact section */
+  #get-in-touch {
+    background: #fffefb;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  #get-in-touch h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FF8C00;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-info a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Gallery & Testimonials - simple grid layout */
+  #gallery, #testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  /* Footer */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 0.9em;
+  }
+
+  /* Responsive Menu */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  @media(max-width: 768px) {
     nav {
-      margin-top: 1rem;
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: linear-gradient(45deg, #FFA500, #FFCC00);
+      padding: 10px 0;
     }
-
-    nav a {
-      color: #000; /* Black */
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
+    nav.show {
+      display: flex;
     }
-
-    nav a:hover {
-      color: #fff; /* White on hover */
+    .menu-toggle {
+      display: block;
     }
-
-    .hero {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #000;
-    }
-
-    .hero img {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      border: 6px solid #ffdb58; /* Mustard */
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .hero h2 {
-      font-size: 1.8rem;
-      color: #ffdb58; /* Mustard */
-    }
-
-    .services {
-      background: #000;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    .services h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      color: #ff8c00; /* Orange */
-    }
-
-    .service-item {
-      background: #ffdb58; /* Mustard background */
-      color: #000; /* Black text */
-      padding: 15px;
-      margin: 10px 0;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 1rem;
-      border-radius: 5px;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .service-item:hover {
-      background: #ff8c00; /* Orange background */
-      color: #000; /* Black text stays */
-    }
-
-    .contact {
-      background: #ff8c00; /* Orange */
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #000; /* Black text */
-    }
-
-    .contact h3 {
-      margin-bottom: 1rem;
-      color: #000; /* Black */
-    }
-
-    .contact a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.8rem 1.2rem;
-      background: #ffdb58; /* Mustard */
-      color: #000; /* Black text */
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .contact a:hover {
-      background: #000;
-      color: #ffdb58;
-    }
-
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 1rem;
-      color: #ffdb58; /* Mustard */
-      font-size: 0.9rem;
-    }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      .hero h2 { font-size: 1.4rem; }
-      .service-item { font-size: 0.9rem; padding: 12px; }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Folake Laode</h1>
-    <p>Memorable Moments, Masterfully Hosted</p>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <img src="images/folake.jpg" alt="Folake Laode">
-    <h2>Professional MC & Compere</h2>
-    <p>Creating unforgettable experiences for every occasion.</p>
-  </section>
+<header>
+  <div class="logo">Mojibade Show</div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <nav id="navbar">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#get-in-touch">Get in Touch</a>
+  </nav>
+</header>
 
-  <section id="services" class="services">
-    <h3>Services</h3>
-      <div class="service-item">CORPORATE EVENTS</div>
-      <div class="service-item">DINNER & GALAS</div>
-      <div class="service-item">BOOK/PRODUCT LAUNCH</div>
-      <div class="service-item">REUNIONS</div>
-      <div class="service-item">BIRTHDAYS</div>
-      <div class="service-item">WEDDINGS</div>
-      <div class="service-item">SCHOOL FUNCTIONS</div>
-      <div class="service-item">PUBLIC SPEAKING</div>
-      <div class="service-item">AND LOTS MORE</div>
-  </section>
+<!-- Hero / Intro Section -->
+<section class="hero" id="intro">
+  <h1>Masterful Host and MC</h1>
+  <p>Your premier event host for every occasion</p>
+</section>
 
-  <section id="contact" class="contact">
-    <h3>Contact Me</h3>
-    <a href="tel:+2348115017713">📞 Call: 0811 501 7713</a>
-    <a href="mailto:booking@folakelaode.com">✉️ Email: booking@folakelaode.com</a>
-  </section>
+<!-- About Section -->
+<section id="about">
+  <h2 style="text-align:center; margin-bottom:20px;">Meet Folake Laode</h2>
+  <p>
+    Mojibade Sosanya, also known as the LadyMC with an M.Sc, is a multi-talented professional with a diverse background in event hosting, TV presenting, corporate communications, acting, public speaking, and influencing. She earned her first degree from Covenant University and further obtained an M.Sc from the School of Media and Communications at Pan Atlantic University, Nigeria.
+  </p>
+  <p>
+    Throughout her banking career, she earned the endearing nickname “Banker with a mic” due to her exceptional ability to captivate audiences. With her strong educational foundation and dedication to using her voice as an instrument of hope, Mojibade is committed to inspiring people to reach their full potential.
+  </p>
+  <p>
+    Mojibade’s extensive experience as an Event Host includes serving as a compere for numerous private and corporate events, making her the go-to personality for all your hosting needs.
+  </p>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Folake Laode. All rights reserved.</p>
-  </footer>
+<!-- Services Section -->
+<section id="services">
+  <h2>SERVICES</h2>
+  <ul class="service-list">
+    <li class="service-item">CORPORATE EVENTS</li>
+    <li class="service-item">DINNERS</li>
+    <li class="service-item">TRADE SHOWS</li>
+    <li class="service-item">SEMINARS</li>
+    <li class="service-item">CONFERENCES</li>
+    <li class="service-item">WEDDINGS & BIRTHDAYS</li>
+    <li class="service-item">SCHOOL FUNCTIONS</li>
+    <li class="service-item">AND MUCH MORE</li>
+  </ul>
+</section>
+
+<!-- Gallery Section (Placeholder images) -->
+<section id="gallery" style="padding:40px 20px;">
+  <h2 style="text-align:center; margin-bottom:20px;">Gallery</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px;">
+    <!-- Replace src with your actual images -->
+    <img src="https://via.placeholder.com/300x200?text=Gallery+Image+1" alt="Gallery Image 1" style="width:100%; border-radius:8px;">
+    <img src="https://via.placeholder.com/300x200?text=Gallery+Image+2" alt="Gallery Image 2" style="width:100%; border-radius:8px;">
+    <img src="https://via.placeholder.com/300x200?text=Gallery+Image+3" alt="Gallery Image 3" style="width:100%; border-radius:8px;">
+    <img src="https://via.placeholder.com/300x200?text=Gallery+Image+4" alt="Gallery Image 4" style="width:100%; border-radius:8px;">
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" style="padding:40px 20px;">
+  <h2 style="text-align:center; margin-bottom:20px;">Testimonials</h2>
+  <div style="display:flex; flex-direction:column; gap:20px;">
+    <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <p>"Mojibade made our wedding unforgettable! Highly professional and engaging."</p>
+      <p style="font-weight:bold; text-align:right;">- Happy Client</p>
+    </div>
+    <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <p>"Her energy and charisma are unmatched. She truly owns the stage."</p>
+      <p style="font-weight:bold; text-align:right;">- Event Organizer</p>
+    </div>
+  </div>
+</section>
+
+<!-- Get in Touch -->
+<section id="get-in-touch">
+  <h2>Get in Touch</h2>
+  <div class="contact-info">
+    <a href="tel:+2348115017713"><strong>Phone:</strong> (234) 811 501 7713</a>
+    <a href="mailto:booking@folakelaode.com"><strong>Email:</strong> booking@folakelaode.com</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2024 Folake Laode. All rights reserved.
+</footer>
+
+<script>
+  // Toggle menu on mobile
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('navbar').classList.toggle('show');
+  });
+</script>
+
 </body>
 </html>
