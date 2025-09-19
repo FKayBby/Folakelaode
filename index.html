@@ -29,6 +29,16 @@
     letter-spacing: 2px;
   }
 
+  /* Profile picture styling */
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+    border: 3px solid #ccc;
+  }
+
   nav {
     margin-top: 10px;
   }
@@ -42,6 +52,21 @@
 
   nav a:hover {
     color: #ff9900;
+  }
+
+  /* Responsive menu toggle */
+  @media(max-width: 768px){
+    nav {
+      display: none;
+    }
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 1.2em;
+      color: #ff6600;
+      margin-top: 10px;
+      text-align: center;
+    }
   }
 
   section {
@@ -90,6 +115,11 @@
   .contact-details li span {
     margin-left: 10px;
   }
+  /* For clickable phone and email */
+  .clickable {
+    color: #0066cc;
+    text-decoration: underline;
+  }
 
   /* Footer */
   footer {
@@ -98,22 +128,6 @@
     background-color: #fff;
     margin-top: 20px;
     box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-    font-size: 0.9em;
-  }
-
-  /* Responsive menu toggle */
-  @media(max-width: 768px){
-    nav {
-      display: none;
-    }
-    .menu-toggle {
-      display: block;
-      cursor: pointer;
-      font-size: 1.2em;
-      color: #ff6600;
-      margin-top: 10px;
-      text-align: center;
-    }
   }
 </style>
 </head>
@@ -121,10 +135,13 @@
 
 <header>
   <h1>Folake Laode</h1>
+  <!-- Your profile picture -->
+  <img src="YOUR_IMAGE_URL_HERE" alt="Folake Laode" class="profile-pic" />
   <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
   <nav id="navLinks">
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
     <a href="#get-in-touch">Get In Touch</a>
   </nav>
 </header>
@@ -140,14 +157,29 @@
   <p style="font-size:1.2em; line-height:1.5;">Corporate Events | Dinner and Galas | Book and product launches | Wedding and birthdays | School functions | Public Speaking engagements and much more</p>
 </section>
 
+<!-- Optional: Gallery section -->
+<!--
+<section id="gallery">
+  <h2>Gallery</h2>
+  <p>Include your gallery images here.</p>
+</section>
+-->
+
 <section id="get-in-touch" style="background-color:#fff;">
   <h2 style="text-align:center;">Get In Touch</h2>
   <ul class="contact-details" style="max-width:600px; margin:auto;">
-    <li><strong>Phone:</strong> <span>+234 807 610 6813</span></li>
-    <li><strong>Phone:</strong> <span>+234 906 312 7175</span></li>
-    <li><strong>Email:</strong> <span>mojibade@mojibadeshow.com</span></li>
-    <li><strong>Email:</strong> <span>team@mojibadeshow.com</span></li>
-    <li><strong>Instagram:</strong> <span>@mojibadeshow</span></li>
+    <li>
+      <strong>Phone:</strong>
+      <a class="clickable" href="tel:08115017713">08115017713</a>
+    </li>
+    <li>
+      <strong>Phone:</strong>
+      <a class="clickable" href="tel:09063127175">09063127175</a>
+    </li>
+    <li>
+      <strong>Email:</strong>
+      <a class="clickable" href="mailto:booking@folakelaode.com">booking@folakelaode.com</a>
+    </li>
   </ul>
 </section>
 
