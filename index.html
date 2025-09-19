@@ -5,29 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Folake Laode - Master of Ceremony</title>
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
 <style>
   body {
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    background-color: #000; /* Black background */
-    color: #fff; /* Default text color */
+    font-family: 'Raleway', sans-serif;
+    background-color: #ffffff;
+    color: #333;
   }
 
-  /* HEADER */
   header {
-    background-color: #000;
+    background-color: #fff;
     padding: 20px;
     text-align: center;
     position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
 
   header h1 {
-    font-family: 'Pacifico', cursive;
     font-size: 2.5em;
-    color: #FFA500; /* Orange */
+    color: #000;
     margin: 0;
+    letter-spacing: 2px;
   }
 
   nav {
@@ -35,117 +34,74 @@
   }
 
   nav a {
-    color: #FFA500; /* Orange */
+    color: #ff6600;
     margin: 0 15px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
   }
 
   nav a:hover {
-    color: #FFD700; /* Mustard Yellow */
+    color: #ff9900;
   }
 
-  /* Hero Section */
-  .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-    padding: 80px 20px;
-    text-align: center;
-  }
-
-  .hero h2 {
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5em;
-    color: #FFA500;
-    margin-bottom: 20px;
-  }
-
-  .hero p {
-    font-size: 1.2em;
-  }
-
-  /* Contact Info */
-  .contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #111;
-    padding: 20px;
-  }
-
-  .contact-info div {
-    margin: 10px 20px;
-    min-width: 200px;
-  }
-
-  /* Sections */
   section {
     padding: 40px 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 
-  section h2 {
-    color: #FFA500;
+  h2 {
+    color: #ff6600;
     margin-bottom: 20px;
-    border-bottom: 2px solid #FFA500;
+    border-bottom: 2px solid #ff6600;
     padding-bottom: 10px;
   }
 
-  /* Services & Gallery */
-  .services, .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .service-item, .gallery-item {
-    background-color: #222;
-    padding: 20px;
-    margin: 10px;
-    flex: 1 1 250px;
-    border-radius: 8px;
-  }
-
-  /* Testimonials */
-  .testimonials {
-    background-color: #111;
-    padding: 40px 20px;
-  }
-
-  /* Contact Form */
-  form {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 4px;
-    border: none;
-  }
-
-  button {
-    background-color: #FFA500;
+  /* Get in touch button */
+  .get-in-touch-btn {
+    display: inline-block;
+    background-color: #ff6600;
     color: #fff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 4px;
     font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
   }
 
-  button:hover {
-    background-color: #FFD700;
+  /* Contact details list style */
+  .contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-details li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .contact-details li span {
+    margin-left: 10px;
   }
 
   /* Footer */
   footer {
-    background-color: #111;
     text-align: center;
     padding: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    font-size: 0.9em;
   }
 
-  /* Responsive navigation toggle for mobile */
+  /* Responsive menu toggle */
   @media(max-width: 768px){
     nav {
       display: none;
@@ -154,8 +110,9 @@
       display: block;
       cursor: pointer;
       font-size: 1.2em;
-      color: #FFA500;
+      color: #ff6600;
       margin-top: 10px;
+      text-align: center;
     }
   }
 </style>
@@ -168,94 +125,32 @@
   <nav id="navLinks">
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
+    <a href="#get-in-touch">Get In Touch</a>
   </nav>
 </header>
 
-<!-- Hero Banner -->
-<div class="hero" id="home">
-  <h2>Master of Ceremony & Event Host</h2>
-  <p>Making your events unforgettable with professionalism and style</p>
-</div>
-
-<!-- Contact Info -->
-<div class="contact-info" id="contact">
-  <div>
-    <h3>Contact</h3>
-    <p>Phone: 08115017713</p>
-    <p>Email: <a href="mailto:booking@folakelaode.com" style="color:#FFD700;">booking@folakelaode.com</a></p>
-    <p>Website: <a href="https://folakelaode.com" style="color:#FFD700;">folakelaode.com</a></p>
-  </div>
-</div>
-
-<!-- About Section -->
 <section id="about">
   <h2>About Folake Laode</h2>
   <p>Mojibade Sosanya, also known as the LadyMC with an M.Sc, is a multi-talented professional with a diverse background in event hosting, TV presenting, corporate communications, acting, public speaking, and influencing. She earned her first degree from Covenant University and an M.Sc from the School of Media and Communications at Pan Atlantic University, Nigeria. With extensive experience as an Event Host, she is dedicated to inspiring people to reach their full potential.</p>
+  <a href="#get-in-touch" class="get-in-touch-btn">Get In Touch</a>
 </section>
 
-<!-- Services Section -->
 <section id="services">
   <h2>Services</h2>
-  <div class="services">
-    <div class="service-item">
-      <h3>Corporate Events</h3>
-      <p>Hosting and managing corporate events, conferences, and seminars with professionalism and style.</p>
-    </div>
-    <div class="service-item">
-      <h3>Dinner and Galas</h3>
-      <p>Elegant hosting for dinners, galas, and special social gatherings.</p>
-    </div>
-    <div class="service-item">
-      <h3>Book & Product Launches</h3>
-      <p>Creating buzz and engagement during launches and promotional events.</p>
-    </div>
-    <div class="service-item">
-      <h3>Weddings & Birthdays</h3>
-      <p>Making your special day memorable with lively and professional hosting.</p>
-    </div>
-    <div class="service-item">
-      <h3>School Functions & Public Speaking</h3>
-      <p>Engaging speeches and presentations for educational and public events.</p>
-    </div>
-    <div class="service-item">
-      <h3>And Much More</h3>
-      <p>Customized event hosting tailored to your needs.</p>
-    </div>
-  </div>
+  <p style="font-size:1.2em; line-height:1.5;">Corporate Events | Dinner and Galas | Book and product launches | Wedding and birthdays | School functions | Public Speaking engagements and much more</p>
 </section>
 
-<!-- Gallery Section -->
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Event 1" style="width:100%; border-radius:8px;"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1520962916572-ffbc4e2b2c7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Event 2" style="width:100%; border-radius:8px;"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1532619188506-93f3a7b9c0f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Event 3" style="width:100%; border-radius:8px;"></div>
-  </div>
+<section id="get-in-touch" style="background-color:#fff;">
+  <h2 style="text-align:center;">Get In Touch</h2>
+  <ul class="contact-details" style="max-width:600px; margin:auto;">
+    <li><strong>Phone:</strong> <span>+234 807 610 6813</span></li>
+    <li><strong>Phone:</strong> <span>+234 906 312 7175</span></li>
+    <li><strong>Email:</strong> <span>mojibade@mojibadeshow.com</span></li>
+    <li><strong>Email:</strong> <span>team@mojibadeshow.com</span></li>
+    <li><strong>Instagram:</strong> <span>@mojibadeshow</span></li>
+  </ul>
 </section>
 
-<!-- Testimonials -->
-<section id="testimonials" class="testimonials">
-  <h2>Testimonials</h2>
-  <p>"Folake was fantastic at our wedding! Everyone loved her energy and professionalism." - Client A</p>
-  <p>"Her public speaking skills are top-notch. Highly recommend!" - Client B</p>
-</section>
-
-<!-- Contact Form -->
-<section id="contact-form">
-  <h2>Get in Touch</h2>
-  <form action="#" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<!-- Footer -->
 <footer>
   <p>&copy; 2024 Folake Laode. All rights reserved.</p>
 </footer>
@@ -269,14 +164,6 @@
       nav.style.display = 'block';
     }
   }
-
-  // Optional: Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
 </script>
 
 </body>
