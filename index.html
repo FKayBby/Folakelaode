@@ -72,6 +72,24 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+    text-align: justify;
+  }
+
+  /* Read more button */
+  #readMoreBtn {
+    margin-top: 15px;
+    background: #FF8C00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  #readMoreBtn:hover {
+    background: #e67600;
   }
 
   /* Services with full caps and light orange background */
@@ -199,37 +217,42 @@
   <p>
     Folake Laode is a versatile compere, event host, broadcaster, and voice-over artist whose career reflects depth, diversity, and a lifelong devotion to growth. With a commanding presence, she has hosted dazzling red-carpet events, engaged audiences as a radio personality, and brought structure, warmth, and elegance to weddings, birthdays, and corporate occasions. Her hallmark is authenticity; turning every event into an unforgettable experience.
   </p>
-  <p>
-    A graduate of Computer Science, Folake’s journey has always been anchored in education. She has taught undergraduate students in polytechnic, guiding them through practicals in computer technology, and continues to see teaching as a calling as much as a profession. For her, going to school and pursuing knowledge is not just a path to advancement but a source of joy and fulfillment. The pursuit of education and self-improvement makes her heart race, fuels her creativity, and empowers the way she connects with people. This passion has guided her into both teaching and training, where she has shared her expertise with students, mentees, and colleagues, leaving a mark that goes beyond the classroom.
-  </p>
-  <p>
-    Professionally, Folake has invested in extensive training, sharpening her craft through dedicated programs in broadcasting and voice-over artistry. Today, she is not only a skilled voice-over artist but also a mentor who has trained others in mastering communication and presentation. Her ability to both learn and teach underscores her philosophy: that knowledge only becomes powerful when it is multiplied.
-  </p>
-<p>
-    A devoted reader with an insatiable appetite for books, Folake continues to expand her horizons through the written word. Reading is more than a pastime for her; it is a constant companion, a wellspring of inspiration, and a tool that enriches her voice, her hosting, and her worldview.
-  </p>
-<p>
-    Her leadership extends to the creative industry, where she serves as the Chief Whip of the Association of Voice-over Artists (AVOA), Nigeria, under the leadership of renowned veteran actor, Mr. Segun Arinze. In this role, she advocates for the growth and recognition of voice-over professionals, lending her voice to a community dedicated to raising standards and shaping the future of the craft.
-  </p>
-<p>
-    For her, every microphone is a classroom, every event a stage for connection, and every book a new horizon, her journey is powered by learning, expressed through voice, and fulfilled by creating unforgettable experiences.
-  </p>
+
+  <!-- Hidden text -->
+  <div id="more-text" style="display:none;">
+    <p>
+      A graduate of Computer Science, Folake’s journey has always been anchored in education. She has taught undergraduate students in polytechnic, guiding them through practicals in computer technology, and continues to see teaching as a calling as much as a profession. For her, going to school and pursuing knowledge is not just a path to advancement but a source of joy and fulfillment.
+    </p>
+    <p>
+      Professionally, Folake has invested in extensive training, sharpening her craft through dedicated programs in broadcasting and voice-over artistry. Today, she is not only a skilled voice-over artist but also a mentor who has trained others in mastering communication and presentation.
+    </p>
+    <p>
+      A devoted reader with an insatiable appetite for books, Folake continues to expand her horizons through the written word. Reading is more than a pastime for her; it enriches her voice, her hosting, and her worldview.
+    </p>
+    <p>
+      Her leadership extends to the creative industry, where she serves as the Chief Whip of the Association of Voice-over Artists (AVOA), Nigeria, under the leadership of renowned veteran actor, Mr. Segun Arinze.
+    </p>
+    <p>
+      For her, every microphone is a classroom, every event a stage for connection, and every book a new horizon.
+    </p>
+  </div>
+
+  <!-- Button -->
+  <button id="readMoreBtn">Read More</button>
 </section>
 
 <!-- Services Section -->
-<section id="services" style="background-color:#ffe0b2; padding:40px 20px; text-align:center;">
-  <h2 style="text-transform:uppercase; font-size:2em; margin-bottom:20px; font-family:'Ariel', cursive;">SERVICES</h2>
-  <p style="font-weight:bold; font-size:1.2em; margin:0; letter-spacing:1px; font-family:'Ariel', sans-serif;">
+<section id="services">
+  <h2>SERVICES</h2>
+  <p style="font-weight:bold; font-size:1.2em; margin:0; letter-spacing:1px;">
     CORPORATE EVENTS | DINNERS | BOOK & PRODUCT LAUNCHES | REUNION PARTY | WEDDINGS & BIRTHDAYS | SCHOOL FUNCTIONS | AND MUCH MORE
   </p>
 </section>
-</section>
 
-<!-- Gallery Section (Placeholder images) -->
-<section id="gallery" style="padding:40px 20px;">
+<!-- Gallery Section -->
+<section id="gallery">
   <h2 style="text-align:center; margin-bottom:20px;">Gallery</h2>
   <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px;">
-    <!-- Replace src with your actual images -->
     <img src="https://via.placeholder.com/300x200?text=Gallery+Image+1" alt="Gallery Image 1" style="width:100%; border-radius:8px;">
     <img src="https://via.placeholder.com/300x200?text=Gallery+Image+2" alt="Gallery Image 2" style="width:100%; border-radius:8px;">
     <img src="https://via.placeholder.com/300x200?text=Gallery+Image+3" alt="Gallery Image 3" style="width:100%; border-radius:8px;">
@@ -256,12 +279,12 @@
 <section id="get-in-touch">
   <h2>Get in Touch</h2>
   <div class="contact-info">
-    <a href="tel:+2348115077713" style="text-decoration: none; display: flex; align-items: center;">
-      <i class="fas fa-phone" style="margin-right: 8px;"></i>
+    <a href="tel:+2348115077713">
+      <i class="fas fa-phone"></i>
       <strong>Phone:</strong> (+234) 811 501 7713
     </a>
-    <a href="mailto:booking@folakelaode.com" style="text-decoration: none; display: flex; align-items: center; margin-top: 10px;">
-      <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+    <a href="mailto:booking@folakelaode.com">
+      <i class="fas fa-envelope"></i>
       <strong>Email:</strong> booking@folakelaode.com
     </a>
   </div>
@@ -276,6 +299,20 @@
   // Toggle menu on mobile
   document.getElementById('menu-toggle').addEventListener('click', function() {
     document.getElementById('navbar').classList.toggle('show');
+  });
+
+  // Read more toggle
+  const readMoreBtn = document.getElementById("readMoreBtn");
+  const moreText = document.getElementById("more-text");
+
+  readMoreBtn.addEventListener("click", function() {
+    if (moreText.style.display === "none") {
+      moreText.style.display = "block";
+      readMoreBtn.textContent = "Read Less";
+    } else {
+      moreText.style.display = "none";
+      readMoreBtn.textContent = "Read More";
+    }
   });
 </script>
 
