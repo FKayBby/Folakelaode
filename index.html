@@ -92,6 +92,21 @@
     background: #e67600;
   }
 
+  /* Active state when expanded */
+  #readMoreBtn.active {
+    background: #cc5500;
+  }
+
+  /* Smooth slide effect for hidden text */
+  #more-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+  }
+  #more-text.show {
+    max-height: 2000px; /* big enough to fit the content */
+  }
+
   /* Services with full caps and light orange background */
   #services {
     background-color: #ffe0b2; /* Light orange */
@@ -219,7 +234,7 @@
   </p>
 
   <!-- Hidden text -->
-  <div id="more-text" style="display:none;">
+  <div id="more-text">
     <p>
       A graduate of Computer Science, Folake’s journey has always been anchored in education. She has taught undergraduate students in polytechnic, guiding them through practicals in computer technology, and continues to see teaching as a calling as much as a profession. For her, going to school and pursuing knowledge is not just a path to advancement but a source of joy and fulfillment.
     </p>
@@ -301,16 +316,16 @@
     document.getElementById('navbar').classList.toggle('show');
   });
 
-  // Read more toggle
+  // Smooth Read more toggle
   const readMoreBtn = document.getElementById("readMoreBtn");
   const moreText = document.getElementById("more-text");
 
   readMoreBtn.addEventListener("click", function() {
-    if (moreText.style.display === "none") {
-      moreText.style.display = "block";
+    moreText.classList.toggle("show");
+    readMoreBtn.classList.toggle("active");
+    if (moreText.classList.contains("show")) {
       readMoreBtn.textContent = "Read Less";
     } else {
-      moreText.style.display = "none";
       readMoreBtn.textContent = "Read More";
     }
   });
