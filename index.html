@@ -280,15 +280,61 @@
 </section>
 
 <!-- Gallery Section -->
-<section id="gallery">
-  <h2 style="text-align:center; margin-bottom:20px;">Gallery</h2>
-  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px;">
-    <img src="https://via.placeholder.com/300x200?text=Gallery+Image+1" alt="Gallery Image 1" style="width:100%; border-radius:8px;">
-    <img src="https://via.placeholder.com/300x200?text=Gallery+Image+2" alt="Gallery Image 2" style="width:100%; border-radius:8px;">
-    <img src="https://via.placeholder.com/300x200?text=Gallery+Image+3" alt="Gallery Image 3" style="width:100%; border-radius:8px;">
-    <img src="https://via.placeholder.com/300x200?text=Gallery+Image+4" alt="Gallery Image 4" style="width:100%; border-radius:8px;">
+<section id="gallery" style="padding:40px 20px; background:#000; color:#fff; text-align:center;">
+  <h2 style="margin-bottom:20px;">Gallery</h2>
+  
+  <div class="slideshow-container" style="position:relative; max-width:600px; margin:auto;">
+    
+    <!-- Slides -->
+    <div class="mySlides" style="display:none;">
+      <img src="images/gallery1.jpg" style="width:100%; border-radius:10px;">
+    </div>
+    <div class="mySlides" style="display:none;">
+      <img src="images/gallery2.jpg" style="width:100%; border-radius:10px;">
+    </div>
+    <div class="mySlides" style="display:none;">
+      <img src="images/gallery3.jpg" style="width:100%; border-radius:10px;">
+    </div>
+    <div class="mySlides" style="display:none;">
+      <img src="images/gallery4.jpg" style="width:100%; border-radius:10px;">
+    </div>
+    <div class="mySlides" style="display:none;">
+      <img src="images/gallery5.jpg" style="width:100%; border-radius:10px;">
+    </div>
+
+    <!-- Navigation arrows -->
+    <a class="prev" onclick="plusSlides(-1)" 
+       style="cursor:pointer; position:absolute; top:50%; left:0; transform:translateY(-50%);
+              font-size:24px; color:white; padding:8px;">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)" 
+       style="cursor:pointer; position:absolute; top:50%; right:0; transform:translateY(-50%);
+              font-size:24px; color:white; padding:8px;">&#10095;</a>
   </div>
 </section>
+
+<!-- Slideshow Script -->
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
+
+// Manual navigation
+function plusSlides(n) {
+  slideIndex += n - 1; 
+  showSlides();
+}
+</script>
 
 <!-- Testimonials Section -->
 <section id="testimonials" style="padding:40px 20px;">
