@@ -280,48 +280,39 @@
 </section>
 
 <!-- Gallery Section -->
-<section id="gallery" style="padding:40px 20px; background:#f9f9f9; text-align:center;">
-  <h2 style="background:#FFDB58; color:#000; padding:8px 15px; border-radius:6px; display:inline-block; font-size:18px;">
-    Gallery
-  </h2>
-
-  <div class="slideshow-container">
-
-    <!-- Slide 1 -->
+<section id="gallery" style="padding:40px 20px; background:#000; color:#fff; text-align:center;">
+  <h2 style="margin-bottom:20px;">Gallery</h2>
+  
+  <div class="slideshow-container" style="position:relative; max-width:600px; margin:auto;">
+    
+    <!-- Slides -->
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery1.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
+      <img src="images/gallery1.jpg" style="width:100%; border-radius:10px;">
     </div>
-
-    <!-- Slide 2 -->
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery2.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
+      <img src="images/gallery2.jpg" style="width:100%; border-radius:10px;">
     </div>
-
-    <!-- Slide 3 -->
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery3.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
+      <img src="images/gallery3.jpg" style="width:100%; border-radius:10px;">
     </div>
-
-    <!-- Slide 4 -->
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery4.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
+      <img src="images/gallery4.jpg" style="width:100%; border-radius:10px;">
+    </div>
+    <div class="mySlides" style="display:none;">
+      <img src="images/gallery5.jpg" style="width:100%; border-radius:10px;">
     </div>
 
     <!-- Navigation arrows -->
-    <a class="prev" onclick="plusSlides(-1)" style="position:absolute; top:50%; left:10px; font-size:24px; color:#fff; text-decoration:none; cursor:pointer;">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)" style="position:absolute; top:50%; right:10px; font-size:24px; color:#fff; text-decoration:none; cursor:pointer;">&#10095;</a>
-
-  </div>
-
-  <!-- Dots -->
-  <div style="text-align:center; margin-top:15px;">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
+    <a class="prev" onclick="plusSlides(-1)" 
+       style="cursor:pointer; position:absolute; top:50%; left:0; transform:translateY(-50%);
+              font-size:24px; color:white; padding:8px;">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)" 
+       style="cursor:pointer; position:absolute; top:50%; right:0; transform:translateY(-50%);
+              font-size:24px; color:white; padding:8px;">&#10095;</a>
   </div>
 </section>
 
+<!-- Slideshow Script -->
 <script>
 let slideIndex = 0;
 showSlides();
@@ -329,27 +320,18 @@ showSlides();
 function showSlides() {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
   }
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
   slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 4000); // Change image every 4 seconds
 }
 
+// Manual navigation
 function plusSlides(n) {
-  slideIndex += n - 1;
-  showSlides();
-}
-
-function currentSlide(n) {
-  slideIndex = n - 1;
+  slideIndex += n - 1; 
   showSlides();
 }
 </script>
