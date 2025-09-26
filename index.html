@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Folake Laode - The Microphone Goddess</title>
-<!-- Google Fonts: Pacifico, Roboto, Dancing Script -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&family=Dancing+Script&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<title> Folake Laode - The Microphone Goddess </title>
+<!-- Google Fonts for stylish typography -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-  /* Reset and base styles */
   body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -16,214 +15,235 @@
     color: #000;
   }
 
-  /* Slider header styles */
-  .header {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(135deg, orange, #ffdb58);
+  /* Header styles */
+  header {
+    background: linear-gradient(45deg, #FFA500, #FFCC00);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
-  /* Sliding background images */
-  .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    animation: slideAnimation 20s infinite;
-  }
-  /* Two slides with alternate images and delay */
-  .slide:nth-child(1) {
-    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-  }
-  .slide:nth-child(2) {
-    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-    animation-delay: 10s;
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    color: #000;
   }
 
-  @keyframes slideAnimation {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    45% { opacity: 1; }
-    55% { opacity: 0; }
-    100% { opacity: 0; }
+  nav {
+    display: flex;
+    gap: 15px;
   }
 
-  /* Overlay content on the slider */
-  .content {
-    position: relative;
-    z-index: 2;
-    color: white;
+  nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #FF8C00;
+  }
+
+  /* Hero section */
+  .hero {
     text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 20px;
+    padding: 60px 20px;
   }
 
-  /* Main header in slider */
-  .content h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3em;
-    margin-bottom: 20px;
-    font-weight: normal;
-    color: yellow;
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
   }
 
-  /* Description paragraph in slider */
-  .content p {
+  .hero p {
     font-size: 1.2em;
-    font-family: 'Arial', sans-serif;
-    margin-bottom: 30px;
+    font-weight: 300;
   }
 
-  /* Buttons in slider */
-  .buttons {
-    margin-top: 30px;
+  /* Section styles */
+  section {
+    padding: 40px 20px;
   }
 
-  .btn {
-    display: inline-block;
-    padding: 15px 30px;
-    margin: 10px;
-    border-radius: 25px;
+  #about {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  /* Read more button */
+  #readMoreBtn {
+    margin-top: 15px;
+    background: #FF8C00;
+    color: #fff;
     border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
-    font-family: 'Arial', sans-serif;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background 0.3s;
   }
 
-  .btn-primary {
-    background-color: #2ecc71;
-    color: white;
+  #readMoreBtn:hover {
+    background: #e67600;
   }
 
-  .btn-primary:hover {
-    background-color: #27ae60;
+  /* Active state when expanded */
+  #readMoreBtn.active {
+    background: #cc5500;
   }
 
-  /* Content sections styles */
-section {
-  padding: 40px 20px;
-}
+  /* Smooth slide effect for hidden text */
+  #more-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+  }
+  #more-text.show {
+    max-height: 2000px; /* big enough to fit the content */
+  }
 
-#about {
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-  text-align: justify;
-}
+  /* Services with full caps and light orange background */
+  #services {
+    background-color: #ffe0b2; /* Light orange */
+    text-align: center;
+  }
 
-/* "Meet Folake Laode" heading with Dancing Script font in about */
-.meet-heading {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2em;
-  margin-bottom: 10px;
-  text-align: center;
-  color: orange;
-}
+  #services h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
 
-/* Read more button styles */
-#readMoreBtn {
-  margin-top: 15px;
-  background: #FF8C00;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
+  .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+  }
 
-#readMoreBtn:hover {
-  background: #e67600;
-}
+  .service-item {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-weight: bold;
+  }
 
-/* Toggle hidden text */
-#more-text {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease;
-}
-#more-text.show {
-  max-height: 2000px;
-}
+  /* Contact section */
+  #get-in-touch {
+    background: #fffefb;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
-/* Services section */
-#services {
-  background-color: #ffe0b2;
-  text-align: center;
-}
-#services h2 {
-  text-transform: uppercase;
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-#services p {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin: 0 auto;
-  letter-spacing: 1px;
-  max-width: 800px;
-}
+  #get-in-touch h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FF8C00;
+  }
 
-/* Gallery & Testimonials grid */
-#gallery, #testimonials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
-/* Footer styles */
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 15px 20px;
-  font-size: 0.9em;
-}
+  .contact-info a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-/* Responsive adjustments if needed */
-@media(max-width: 768px) {
-  /* No header menu to style since header removed */
-}
+  /* Gallery & Testimonials - simple grid layout */
+  #gallery, #testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  /* Footer */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 0.9em;
+  }
+
+  /* Responsive Menu */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  @media(max-width: 768px) {
+    nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: linear-gradient(45deg, #FFA500, #FFCC00);
+      padding: 10px 0;
+    }
+    nav.show {
+      display: flex;
+    }
+    .menu-toggle {
+      display: block;
+    }
+  }
 </style>
 </head>
 <body>
 
-<!-- Slider Header with background images and overlay -->
-<div class="header">
-  <!-- Slides -->
-  <div class="slide"></div>
-  <div class="slide"></div>
-  
-  <!-- Overlay Content -->
-  <div class="content">
-    <h1>The Microphone Goddess</h1>
-    <p>Masterful event host and MC</p>
-    <div class="buttons">
-      <button class="btn btn-primary">Book Folake</button>
-    </div>
+<header>
+  <div class="logo" style="display:flex; align-items:center;">
+    <!-- Logo Image with Link -->
+    <a href="index.html" style="display:inline-block;">
+      <img src="images/logo.png" alt="Folake Laode Logo" style="height:50px; max-width:100%; object-fit:contain;">
+    </a>
   </div>
-</div>
-
-<!-- Main Content Sections -->
+  
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  
+  <nav id="navbar">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#get-in-touch">Get in Touch</a>
+  </nav>
+</header>
+<!-- Hero / Intro Section -->
+<section class="hero" id="intro">
+  <h1>Masterful Host and MC</h1>
+  <p>Your premier event host for every occasion</p>
+</section>
 
 <!-- About Section -->
 <section id="about">
-  <!-- Profile Photo -->
-  <div style="text-align:center; margin-bottom:20px;">
-    <img src="images/mypic.jpg" alt="Folake Laode" style="width:100%; max-width:600px; height:auto; object-fit:cover; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
-  </div>
+ <!-- Profile Photo -->
+<div style="text-align:center; margin-bottom:20px;">
+  <img src="images/mypic.jpg" alt="Folake Laode" 
+       style="width:100%; max-width:600px; height:auto; object-fit:cover; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+</div>
 
-  <!-- "Meet Folake Laode" in orange with Dancing Script font -->
-  <h1 class="meet-heading">Meet Folake Laode</h1>
-  
+<!-- "Meet Folake Laode" in orange, after the picture -->
+<h1 style="color: orange; font-family: 'Dancing Script', cursive; font-size: 2em; margin-bottom: 10px; text-align: center;">
+  Meet Folake Laode
+</h1>
   <p>
     Folake Laode is a versatile compere, event host, broadcaster, and voice-over artist whose career reflects depth, diversity, and a lifelong devotion to growth. With a commanding presence, she has hosted dazzling red-carpet events, engaged audiences as a radio personality, and brought structure, warmth, and elegance to weddings, birthdays, and corporate occasions. Her hallmark is authenticity; turning every event into an unforgettable experience.
   </p>
@@ -247,7 +267,7 @@ footer {
     </p>
   </div>
 
-  <!-- Read More Button -->
+  <!-- Button -->
   <button id="readMoreBtn">Read More</button>
 </section>
 
@@ -288,12 +308,12 @@ footer {
 <!-- Get in Touch -->
 <section id="get-in-touch">
   <h2>Get in Touch</h2>
-  <div class="contact-info" style="display:flex; flex-direction:column; gap:15px;">
-    <a href="tel:+2348115077713" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:#000;">
+  <div class="contact-info">
+    <a href="tel:+2348115077713">
       <i class="fas fa-phone"></i>
       <strong>Phone:</strong> (+234) 811 501 7713
     </a>
-    <a href="mailto:booking@folakelaode.com" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:#000;">
+    <a href="mailto:booking@folakelaode.com">
       <i class="fas fa-envelope"></i>
       <strong>Email:</strong> booking@folakelaode.com
     </a>
@@ -305,17 +325,23 @@ footer {
   &copy; 2025 Folake Laode. All rights reserved.
 </footer>
 
-<!-- Scripts for Read More toggle -->
 <script>
+  // Toggle menu on mobile
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('navbar').classList.toggle('show');
+  });
+
+  // Smooth Read more toggle
   const readMoreBtn = document.getElementById("readMoreBtn");
   const moreText = document.getElementById("more-text");
+
   readMoreBtn.addEventListener("click", function() {
     moreText.classList.toggle("show");
-    this.classList.toggle("active");
+    readMoreBtn.classList.toggle("active");
     if (moreText.classList.contains("show")) {
-      this.textContent = "Read Less";
+      readMoreBtn.textContent = "Read Less";
     } else {
-      this.textContent = "Read More";
+      readMoreBtn.textContent = "Read More";
     }
   });
 </script>
