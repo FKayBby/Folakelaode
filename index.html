@@ -283,32 +283,42 @@
 <section id="gallery" style="padding:40px 20px; background:#000; color:#fff; text-align:center;">
   <h2 style="margin-bottom:20px;">Gallery</h2>
   
-  <div class="slideshow-container" style="position:relative; max-width:600px; margin:auto;">
+  <div class="slideshow-container" 
+       style="position:relative; max-width:90%; width:400px; margin:auto; overflow:hidden; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.5);">
     
     <!-- Slides -->
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery1.jpg" style="width:100%; border-radius:10px;">
+      <img src="images/gallery1.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
     </div>
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery2.jpg" style="width:100%; border-radius:10px;">
+      <img src="images/gallery2.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
     </div>
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery3.jpg" style="width:100%; border-radius:10px;">
+      <img src="images/gallery3.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
     </div>
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery4.jpg" style="width:100%; border-radius:10px;">
-    </div>
-    <div class="mySlides" style="display:none;">
-      <img src="images/gallery5.jpg" style="width:100%; border-radius:10px;">
+      <img src="images/gallery4.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
     </div>
 
     <!-- Navigation arrows -->
     <a class="prev" onclick="plusSlides(-1)" 
-       style="cursor:pointer; position:absolute; top:50%; left:0; transform:translateY(-50%);
-              font-size:24px; color:white; padding:8px;">&#10094;</a>
+       style="cursor:pointer; position:absolute; top:50%; left:10px; transform:translateY(-50%);
+              font-size:18px; color:white; padding:5px; background:rgba(0,0,0,0.3); border-radius:50%;">&#10094;</a>
     <a class="next" onclick="plusSlides(1)" 
-       style="cursor:pointer; position:absolute; top:50%; right:0; transform:translateY(-50%);
-              font-size:24px; color:white; padding:8px;">&#10095;</a>
+       style="cursor:pointer; position:absolute; top:50%; right:10px; transform:translateY(-50%);
+              font-size:18px; color:white; padding:5px; background:rgba(0,0,0,0.3); border-radius:50%;">&#10095;</a>
+  </div>
+
+  <!-- Dots (Indicators) -->
+  <div style="text-align:center; margin-top:15px;">
+    <span class="dot" onclick="currentSlide(1)" 
+          style="cursor:pointer; height:12px; width:12px; margin:0 4px; background-color:#bbb; border-radius:50%; display:inline-block;"></span>
+    <span class="dot" onclick="currentSlide(2)" 
+          style="cursor:pointer; height:12px; width:12px; margin:0 4px; background-color:#bbb; border-radius:50%; display:inline-block;"></span>
+    <span class="dot" onclick="currentSlide(3)" 
+          style="cursor:pointer; height:12px; width:12px; margin:0 4px; background-color:#bbb; border-radius:50%; display:inline-block;"></span>
+    <span class="dot" onclick="currentSlide(4)" 
+          style="cursor:pointer; height:12px; width:12px; margin:0 4px; background-color:#bbb; border-radius:50%; display:inline-block;"></span>
   </div>
 </section>
 
@@ -320,12 +330,17 @@ showSlides();
 function showSlides() {
   let i;
   let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
   }
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].style.backgroundColor = "#bbb";  
+  }
   slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].style.backgroundColor = "#FFDB58"; // active dot highlighted in mustard yellow
   setTimeout(showSlides, 4000); // Change image every 4 seconds
 }
 
@@ -334,8 +349,13 @@ function plusSlides(n) {
   slideIndex += n - 1; 
   showSlides();
 }
-</script>
 
+// Go to specific slide
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlides();
+}
+</script>
 <!-- Testimonials Section -->
 <section id="testimonials" style="padding:40px 20px;">
   <h2 style="text-align:center; margin-bottom:20px;">Testimonials</h2>
