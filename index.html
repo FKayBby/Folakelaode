@@ -1,43 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title> Folake Laode - The Microphone Goddess </title>
+<!-- Google Fonts for stylish typography -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fffefb;
+    color: #000;
+  }
+
+  /* Header styles */
+  header {
+    background: linear-gradient(45deg, #FFA500, #FFCC00);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    color: #000;
+  }
+
+  nav {
+    display: flex;
+    gap: 15px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #FF8C00;
+  }
+
+  /* Hero section */
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  /* Section styles */
+  section {
+    padding: 40px 20px;
+  }
+
+  #about {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  /* Read more button */
+  #readMoreBtn {
+    margin-top: 15px;
+    background: #FF8C00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  #readMoreBtn:hover {
+    background: #e67600;
+  }
+
+  /* Active state when expanded */
+  #readMoreBtn.active {
+    background: #cc5500;
+  }
+
+  /* Smooth slide effect for hidden text */
+  #more-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+  }
+  #more-text.show {
+    max-height: 2000px; /* big enough to fit the content */
+  }
+
+  /* Services with full caps and light orange background */
+  #services {
+    background-color: #ffe0b2; /* Light orange */
+    text-align: center;
+  }
+
+  #services h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .service-item {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-weight: bold;
+  }
+
+  /* Contact section */
+  #get-in-touch {
+    background: #fffefb;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  #get-in-touch h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FF8C00;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-info a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Gallery & Testimonials - simple grid layout */
+  #gallery, #testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  /* Footer */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 0.9em;
+  }
+
+  /* Responsive Menu */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  @media(max-width: 768px) {
+    nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: linear-gradient(45deg, #FFA500, #FFCC00);
+      padding: 10px 0;
+    }
+    nav.show {
+      display: flex;
+    }
+    .menu-toggle {
+      display: block;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" style="display:flex; align-items:center;">
+    <!-- Logo Image with Link -->
+    <a href="index.html" style="display:inline-block;">
+      <img src="images/logo.png" alt="Folake Laode Logo" style="height:50px; max-width:100%; object-fit:contain;">
+    </a>
+  </div>
+  
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  
+  <nav id="navbar">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#get-in-touch">Get in Touch</a>
+  </nav>
+</header>
+<!-- Hero / Intro Section -->
+<section class="hero" id="intro">
+  <h1>Masterful Host and MC</h1>
+  <p>Your premier event host for every occasion</p>
+</section>
+
+<!-- About Section -->
+<section id="about">
+ <!-- Profile Photo -->
+<div style="text-align:center; margin-bottom:20px;">
+  <img src="images/mypic.jpg" alt="Folake Laode" 
+       style="width:100%; max-width:600px; height:auto; object-fit:cover; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+</div>
+
+<!-- "Meet Folake Laode" in orange, after the picture -->
+<h1 style="color: orange; font-family: 'Dancing Script', cursive; font-size: 2em; margin-bottom: 10px; text-align: center;">
+  Meet Folake Laode
+</h1>
+  <p>
+    Folake Laode is a versatile compere, event host, broadcaster, and voice-over artist whose career reflects depth, diversity, and a lifelong devotion to growth. With a commanding presence, she has hosted dazzling red-carpet events, engaged audiences as a radio personality, and brought structure, warmth, and elegance to weddings, birthdays, and corporate occasions. Her hallmark is authenticity; turning every event into an unforgettable experience.
+  </p>
+
+  <!-- Hidden text -->
+  <div id="more-text">
+    <p>
+      A graduate of Computer Science, Folake’s journey has always been anchored in education. She has taught undergraduate students in polytechnic, guiding them through practicals in computer technology, and continues to see teaching as a calling as much as a profession. For her, going to school and pursuing knowledge is not just a path to advancement but a source of joy and fulfillment.
+    </p>
+    <p>
+      Professionally, Folake has invested in extensive training, sharpening her craft through dedicated programs in broadcasting and voice-over artistry. Today, she is not only a skilled voice-over artist but also a mentor who has trained others in mastering communication and presentation.
+    </p>
+    <p>
+      A devoted reader with an insatiable appetite for books, Folake continues to expand her horizons through the written word. Reading is more than a pastime for her; it enriches her voice, her hosting, and her worldview.
+    </p>
+    <p>
+      Her leadership extends to the creative industry, where she serves as the Chief Whip of the Association of Voice-over Artists (AVOA), Nigeria, under the leadership of renowned veteran actor, Mr. Segun Arinze.
+    </p>
+    <p>
+      For her, every microphone is a classroom, every event a stage for connection, and every book a new horizon.
+    </p>
+  </div>
+
+  <!-- Button -->
+  <button id="readMoreBtn">Read More</button>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <h2>SERVICES</h2>
+  <p style="font-weight:bold; font-size:1.2em; margin:0; letter-spacing:1px;">
+    CORPORATE EVENTS | DINNERS | BOOK & PRODUCT LAUNCHES | REUNION PARTY | WEDDINGS & BIRTHDAYS | SCHOOL FUNCTIONS | AND MUCH MORE
+  </p>
+</section>
+
 <!-- Gallery Section -->
 <section id="gallery" style="padding:40px 20px; background:#000; color:#fff; text-align:center;">
   <h2 style="margin-bottom:20px;">Gallery</h2>
   
-  <div class="slideshow-container" 
-       style="position:relative; max-width:90%; width:400px; margin:auto; overflow:hidden; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.5);">
+  <div class="slideshow-container" style="position:relative; max-width:600px; margin:auto;">
     
     <!-- Slides -->
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery1.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
+      <img src="images/gallery1.jpg" style="width:100%; border-radius:10px;">
     </div>
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery2.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
+      <img src="images/gallery2.jpg" style="width:100%; border-radius:10px;">
     </div>
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery3.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
+      <img src="images/gallery3.jpg" style="width:100%; border-radius:10px;">
     </div>
     <div class="mySlides" style="display:none;">
-      <img src="images/gallery4.jpg" style="width:100%; height:auto; max-height:300px; object-fit:cover; border-radius:10px;">
+      <img src="images/gallery4.jpg" style="width:100%; border-radius:10px;">
+    </div>
+    <div class="mySlides" style="display:none;">
+      <img src="images/gallery5.jpg" style="width:100%; border-radius:10px;">
     </div>
 
     <!-- Navigation arrows -->
     <a class="prev" onclick="plusSlides(-1)" 
-       style="cursor:pointer; position:absolute; top:50%; left:10px; transform:translateY(-50%);
-              font-size:18px; color:white; padding:5px; background:rgba(0,0,0,0.3); border-radius:50%;">&#10094;</a>
+       style="cursor:pointer; position:absolute; top:50%; left:0; transform:translateY(-50%);
+              font-size:24px; color:white; padding:8px;">&#10094;</a>
     <a class="next" onclick="plusSlides(1)" 
-       style="cursor:pointer; position:absolute; top:50%; right:10px; transform:translateY(-50%);
-              font-size:18px; color:white; padding:5px; background:rgba(0,0,0,0.3); border-radius:50%;">&#10095;</a>
-  </div>
-
-  <!-- Dots (Indicators) -->
-  <div style="text-align:center; margin-top:15px;">
-    <span class="dot" onclick="currentSlide(1)" 
-          style="cursor:pointer; height:12px; width:12px; margin:0 4px; background-color:#bbb; border-radius:50%; display:inline-block;"></span>
-    <span class="dot" onclick="currentSlide(2)" 
-          style="cursor:pointer; height:12px; width:12px; margin:0 4px; background-color:#bbb; border-radius:50%; display:inline-block;"></span>
-    <span class="dot" onclick="currentSlide(3)" 
-          style="cursor:pointer; height:12px; width:12px; margin:0 4px; background-color:#bbb; border-radius:50%; display:inline-block;"></span>
-    <span class="dot" onclick="currentSlide(4)" 
-          style="cursor:pointer; height:12px; width:12px; margin:0 4px; background-color:#bbb; border-radius:50%; display:inline-block;"></span>
+       style="cursor:pointer; position:absolute; top:50%; right:0; transform:translateY(-50%);
+              font-size:24px; color:white; padding:8px;">&#10095;</a>
   </div>
 </section>
 
@@ -49,17 +320,12 @@ showSlides();
 function showSlides() {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
   }
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].style.backgroundColor = "#bbb";  
-  }
   slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].style.backgroundColor = "#FFDB58"; // active dot highlighted in mustard yellow
   setTimeout(showSlides, 4000); // Change image every 4 seconds
 }
 
@@ -68,10 +334,84 @@ function plusSlides(n) {
   slideIndex += n - 1; 
   showSlides();
 }
-
-// Go to specific slide
-function currentSlide(n) {
-  slideIndex = n - 1;
-  showSlides();
-}
 </script>
+
+<!-- Testimonials Section -->
+<section id="testimonials" style="padding:40px 20px;">
+  <h2 style="text-align:center; margin-bottom:20px;">Testimonials</h2>
+  <div style="display:flex; flex-direction:column; gap:20px;">
+    <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <p>"Folake made our wedding unforgettable! Highly professional and engaging."</p>
+      <p style="font-weight:bold; text-align:right;">- Happy Client</p>
+    </div>
+    <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <p>"Her energy and charisma are unmatched. She truly owns the stage."</p>
+      <p style="font-weight:bold; text-align:right;">- Event Organizer</p>
+    </div>
+  </div>
+</section>
+
+<!-- Get in Touch -->
+<section id="get-in-touch" style="background:#000; padding:40px 20px;">
+
+  <!-- Smaller Heading -->
+  <h2 style="background:#FFDB58; color:#000; font-size:1.2em; 
+             padding:6px 12px; border-radius:4px; 
+             display:inline-block; margin-bottom:20px;">
+    Get in Touch
+  </h2>
+
+  <!-- Contact Info -->
+  <div style="display:flex; flex-direction:column; gap:12px; font-size:16px; margin-top:10px; color:#fff;">
+
+    <!-- Phone -->
+    <a href="tel:+2348115077713" 
+       style="color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px;">
+      <i class="fas fa-phone" style="font-size:18px; color:#4CAF50;"></i>
+      (+234) 811 501 7713
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:bookings@folakelaode.com" 
+       style="color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px;">
+      <i class="fas fa-envelope" style="font-size:18px; color:#D44638;"></i>
+      bookings@folakelaode.com
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/folakelaode" target="_blank" 
+       style="color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px;">
+      <i class="fab fa-instagram" style="font-size:18px; color:#C13584;"></i>
+      @folakelaode
+    </a>
+
+  </div>
+</section>
+<!-- Footer -->
+<footer>
+  &copy; 2025 Folake Laode. All rights reserved.
+</footer>
+
+<script>
+  // Toggle menu on mobile
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('navbar').classList.toggle('show');
+  });
+
+  // Smooth Read more toggle
+  const readMoreBtn = document.getElementById("readMoreBtn");
+  const moreText = document.getElementById("more-text");
+
+  readMoreBtn.addEventListener("click", function() {
+    moreText.classList.toggle("show");
+    readMoreBtn.classList.toggle("active");
+    if (moreText.classList.contains("show")) {
+      readMoreBtn.textContent = "Read Less";
+    } else {
+      readMoreBtn.textContent = "Read More";
+    }
+  });
+</script>
+
+</body>
+</html>
