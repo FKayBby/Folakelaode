@@ -221,8 +221,10 @@
     <a href="#gallery">Gallery</a>
     <a href="#testimonials">Testimonials</a>
     <a href="#get-in-touch">Get in Touch</a>
+    <a href="#booking">Book Folake</a> <!-- Added menu item -->
   </nav>
 </header>
+
 <!-- Hero / Intro Section -->
 <section class="hero" id="intro">
 <center>  <h1>Masterful <br> <br>
@@ -309,30 +311,6 @@ Event Host <br> <br> & MC </center> </h1>
   </div>
 </section>
 
-<!-- Slideshow Script -->
-<script>
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  slides[slideIndex-1].style.display = "block";  
-  setTimeout(showSlides, 4000); // Change image every 4 seconds
-}
-
-// Manual navigation
-function plusSlides(n) {
-  slideIndex += n - 1; 
-  showSlides();
-}
-</script>
-
 <!-- Testimonials Section -->
 <section id="testimonials" style="padding:40px 20px;">
   <h2 style="text-align:center; margin-bottom:20px;">Testimonials</h2>
@@ -384,11 +362,52 @@ function plusSlides(n) {
 
   </div>
 </section>
+
+<!-- Booking Form Section -->
+<section id="booking" style="padding:40px 20px; background:#f9f9f9;">
+  <h2 style="text-align:center; margin-bottom:20px;">Book Folake</h2>
+  <form id="bookingForm" style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px;">
+    <label for="name">Full Name *</label>
+    <input type="text" id="name" name="name" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
+
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="email" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
+
+    <label for="phone">Phone Number *</label>
+    <input type="tel" id="phone" name="phone" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
+
+    <label for="service">Service Type *</label>
+    <select id="service" name="service" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
+      <option value="">Select a service</option>
+      <option value="Corporate Events">Corporate Events</option>
+      <option value="Dinners">Dinners</option>
+      <option value="Book & Product Launches">Book & Product Launches</option>
+      <option value="Reunion Party">Reunion Party</option>
+      <option value="Weddings & BIRTHDAYS">Weddings & Birthdays</option>
+      <option value="School Functions">School Functions</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="date">Event Date *</label>
+    <input type="date" id="date" name="date" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
+
+    <label for="address">Event Address</label>
+    <input type="text" id="address" name="address" placeholder="City - State - Country" style="padding:10px; border-radius:5px; border:1px solid #ccc;">
+
+    <label for="notes">Additional Information</label>
+    <textarea id="notes" name="notes" rows="4" placeholder="Write any additional information here" style="padding:10px; border-radius:5px; border:1px solid #ccc;"></textarea>
+
+    <button type="submit" style="background:#4CAF50; color:#fff; padding:12px; border:none; border-radius:5px; font-size:1em; cursor:pointer;">Book now</button>
+  </form>
+  <div id="formMessage" style="margin-top:15px; text-align:center; font-weight:bold;"></div>
+</section>
+
 <!-- Footer -->
 <footer>
   &copy; 2025 Folake Laode. All rights reserved.
 </footer>
 
+<!-- Scripts -->
 <script>
   // Toggle menu on mobile
   document.getElementById('menu-toggle').addEventListener('click', function() {
@@ -398,7 +417,6 @@ function plusSlides(n) {
   // Smooth Read more toggle
   const readMoreBtn = document.getElementById("readMoreBtn");
   const moreText = document.getElementById("more-text");
-
   readMoreBtn.addEventListener("click", function() {
     moreText.classList.toggle("show");
     readMoreBtn.classList.toggle("active");
@@ -407,6 +425,34 @@ function plusSlides(n) {
     } else {
       readMoreBtn.textContent = "Read More";
     }
+  });
+
+  // Handle booking form submission
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Collect form data
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const service = document.getElementById('service').value;
+    const date = document.getElementById('date').value;
+    const address = document.getElementById('address').value.trim();
+    const notes = document.getElementById('notes').value.trim();
+
+    // Basic validation
+    if (!name || !email || !phone || !service || !date) {
+      document.getElementById('formMessage').textContent = "Please fill in all required fields.";
+      document.getElementById('formMessage').style.color = "red";
+      return;
+    }
+
+    // Here, you can send data to your server or email service
+    // For now, just show a success message
+    document.getElementById('formMessage').textContent = "Thank you! Your booking request has been received.";
+    document.getElementById('formMessage').style.color = "green";
+
+    // Reset the form
+    document.getElementById('bookingForm').reset();
   });
 </script>
 
