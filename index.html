@@ -48,9 +48,47 @@
   }
 
   /* Hero section */
-  .hero {
-    text-align: center;
-    padding: 60px 20px;
+  /* FULL WIDTH HERO – NO CROPPING */
+.hero-full {
+  width: 100vw;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-full img {
+  width: 100vw;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* BUTTON OVERLAY */
+.hero-btn-overlay {
+  position: absolute;
+  left: 40px;
+  bottom: 60px;
+  background: #ffffff;
+  color: #000000;
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.hero-btn-overlay:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-btn-overlay {
+    left: 20px;
+    bottom: 30px;
+  }
+}
   }
 
   /* Removed default h1 styling for better layout */
@@ -222,10 +260,10 @@
 </header>
 
 <!-- Hero / Intro Section with your GitHub image -->
-<section class="hero" id="intro">
-  <center>
-    <img src="images/hero-banner.jpg" alt="Folake Laode Banner" style="width:100%; max-width:600px; height:auto;">
-  </center>
+<section class="hero-full" id="intro">
+  <img src="images/hero-banner.jpg" alt="Folake Laode Banner">
+
+  <a href="#booking" class="hero-btn-overlay">Book Folake Now</a>
 </section>
 
 
