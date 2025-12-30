@@ -4,7 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Folake Laode - The Microphone Goddess</title>
-<!-- Google Fonts for stylish typography -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&family=Dancing+Script&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <style>
@@ -13,22 +12,23 @@
     font-family: 'Roboto', sans-serif;
     background-color: #fffefb;
     color: #000;
+    overflow-x: hidden; /* Prevents horizontal scroll */
   }
 
   /* Header styles */
   header {
     background: linear-gradient(45deg, #FFA500, #FFCC00);
-    padding: 20px;
+    padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
   }
 
   .logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 2em;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
     color: #000;
+    font-weight: 600;
   }
 
   nav {
@@ -40,38 +40,70 @@
     text-decoration: none;
     color: #000;
     font-weight: bold;
-    transition: color 0.3s;
   }
 
-  nav a:hover {
-    color: #FF8C00;
-  }
-
-  /* Hero section */
+  /* FULL WIDTH HERO SECTION */
   .hero {
-    text-align: center;
-    padding: 60px 20px;
+    background-color: #0a4d34; /* Dark green from your image */
+    background-image: url('images/hero-banner.jpg'); /* Your photo */
+    background-size: cover;
+    background-position: center;
+    width: 100vw; /* Full viewport width */
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align content left */
+    padding: 60px 10%; /* Left padding for alignment */
+    box-sizing: border-box;
+    color: white;
+    margin: 0;
   }
 
-  /* Removed default h1 styling for better layout */
   .hero h1 {
-    font-size: 2.5em;
-    margin-top: 20px;
+    font-size: 2.8em;
+    max-width: 600px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: left;
   }
 
-  /* Section styles */
+  .hero h1 span {
+    color: #ffcc00; /* Yellow/Gold for emphasis */
+    font-family: 'Dancing Script', cursive;
+  }
+
+  /* White Booking Button */
+  .book-btn {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    border: none;
+  }
+
+  .book-btn:hover {
+    background-color: #f2f2f2;
+    transform: translateY(-2px);
+  }
+
+  /* Standard Sections */
   section {
-    padding: 40px 20px;
+    padding: 60px 5%;
   }
 
   #about {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     line-height: 1.6;
-    text-align: justify;
   }
 
-  /* Read more button */
   #readMoreBtn {
     margin-top: 15px;
     background: #FF8C00;
@@ -81,104 +113,37 @@
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s;
   }
 
-  #readMoreBtn:hover {
-    background: #e67600;
-  }
-
-  /* Active state when expanded */
-  #readMoreBtn.active {
-    background: #cc5500;
-  }
-
-  /* Smooth slide effect for hidden text */
   #more-text {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.6s ease;
   }
+
   #more-text.show {
-    max-height: 2000px; /* big enough to fit the content */
+    max-height: 2000px;
   }
 
-  /* Services with full caps and light orange background */
   #services {
-    background-color: #ffe0b2; /* Light orange */
+    background-color: #ffe0b2;
     text-align: center;
   }
 
   #services h2 {
     text-transform: uppercase;
-    font-size: 2em;
-    margin-bottom: 20px;
   }
 
-  .service-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-  }
-
-  .service-item {
-    background: #fff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    min-width: 200px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    font-weight: bold;
-  }
-
-  /* Contact section */
-  #get-in-touch {
-    background: #fffefb;
-    padding: 40px 20px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  #get-in-touch h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #FF8C00;
-  }
-
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .contact-info a {
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  /* Gallery & Testimonials - simple grid layout */
-  #gallery, #testimonials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-  }
-
-  /* Footer */
-  footer {
-    background: #222;
+  #get-in-touch, #gallery, footer {
+    background: #000;
     color: #fff;
-    text-align: center;
-    padding: 15px 20px;
-    font-size: 0.9em;
   }
 
-  /* Responsive Menu */
+  footer {
+    text-align: center;
+    padding: 20px;
+  }
+
   .menu-toggle {
     display: none;
     font-size: 1.5em;
@@ -186,269 +151,91 @@
   }
 
   @media(max-width: 768px) {
-    nav {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background: linear-gradient(45deg, #FFA500, #FFCC00);
-      padding: 10px 0;
-    }
-    nav.show {
-      display: flex;
-    }
-    .menu-toggle {
-      display: block;
-    }
+    nav { display: none; }
+    .menu-toggle { display: block; }
+    .hero h1 { font-size: 2em; }
+    .hero { padding: 40px 5%; align-items: center; text-align: center; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo" style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: black; font-weight: 600;">
-    Folake Laode
-  </div>
-  
+  <div class="logo">Folake Laode</div>
   <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  
   <nav id="navbar">
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#gallery">Gallery</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#get-in-touch">Get in Touch</a>
     <a href="#booking">Book Folake</a>
   </nav>
 </header>
 
-<!-- Hero / Intro Section with your GitHub image -->
 <section class="hero" id="intro">
-  <center>
-    <img src="images/hero-banner.jpg" alt="Folake Laode Banner" style="width:100%; max-width:600px; height:auto;">
-  </center>
+  <h1>Your event needs an <br>Event Host MC that is <br><span>pleasant, poised, <br>and professional.</span></h1>
+  <a href="#booking" class="book-btn">Book Folake Now</a>
 </section>
 
-<!-- About Section -->
+<section id="testimonials">
+  <h2 style="text-align:center; margin-bottom:20px;">Testimonials</h2>
+  <div style="display:flex; flex-direction:column; gap:20px; max-width: 800px; margin: auto;">
+    <div style="background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <p>"Folake made our wedding unforgettable! Highly professional and engaging."</p>
+      <p style="font-weight:bold; text-align:right;">- Kehinde Abdulsalam </p>
+    </div>
+    <div style="background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <p>"Her energy and charisma are unmatched. She truly owns the stage."</p>
+      <p style="font-weight:bold; text-align:right;">- Babatunde Sarumi </p>
+    </div>
+  </div>
+</section>
+
 <section id="about">
-  <!-- Profile Photo -->
   <div style="text-align:center; margin-bottom:20px;">
-    <img src="images/mypic.jpg" alt="Folake Laode" 
-         style="width:100%; max-width:600px; height:auto; object-fit:cover; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+    <img src="images/mypic.jpg" alt="Folake Laode" style="width:100%; max-width:600px; height:auto; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
   </div>
-
-  <!-- "Meet Folake Laode" in orange, after the picture -->
-  <h1 style="color: orange; font-family: 'Dancing Script', cursive; font-size: 2em; margin-bottom: 10px; text-align: center;">
-    Meet Folake Laode
-  </h1>
-  <p>
-    Folake Laode is a versatile compere, event host, broadcaster, and voice-over artist whose career reflects depth, diversity, and a lifelong devotion to growth. With a commanding presence, she has hosted dazzling red-carpet events, engaged audiences as a radio personality, and brought structure, warmth, and elegance to weddings, birthdays, and corporate occasions. Her hallmark is authenticity; turning every event into an unforgettable experience.
-  </p>
-
-  <!-- Hidden text -->
+  <h1 style="color: orange; font-family: 'Dancing Script', cursive; font-size: 2.5em; text-align: center;">Meet Folake Laode</h1>
+  <p>Folake Laode is a versatile compere, event host, broadcaster, and voice-over artist...</p>
   <div id="more-text">
-    <p>
-      A graduate of Computer Science, Folake’s journey has always been anchored in education. She has taught undergraduate students in polytechnic, guiding them through practicals in computer technology, and continues to see teaching as a calling as much as a profession. For her, going to school and pursuing knowledge is not just a path to advancement but a source of joy and fulfillment.
-    </p>
-    <p>
-      Professionally, Folake has invested in extensive training, sharpening her craft through dedicated programs in broadcasting and voice-over artistry. Today, she is not only a skilled voice-over artist but also a mentor who has trained others in mastering communication and presentation.
-    </p>
-    <p>
-      A devoted reader with an insatiable appetite for books, Folake continues to expand her horizons through the written word. Reading is more than a pastime for her; it enriches her voice, her hosting, and her worldview.
-    </p>
-    <p>
-      Her leadership extends to the creative industry, where she serves as the Chief Whip of the Association of Voice-over Artists (AVOA), Nigeria, under the leadership of renowned veteran actor, Mr. Segun Arinze.
-    </p>
-    <p>
-      For her, every microphone is a classroom, every event a stage for connection, and every book a new horizon.
-    </p>
+    <p>A graduate of Computer Science, Folake’s journey has always been anchored in education...</p>
   </div>
-
-  <!-- Button -->
   <button id="readMoreBtn">Read More</button>
 </section>
 
-<!-- Services Section -->
 <section id="services">
   <h2>SERVICES</h2>
-  <p style="font-weight:bold; font-size:1.2em; margin:0; letter-spacing:1px;">
-    CORPORATE EVENTS | DINNERS | BOOK & PRODUCT LAUNCHES | REUNION PARTY | WEDDINGS & BIRTHDAYS | SCHOOL FUNCTIONS | AND MUCH MORE
-  </p>
+  <p style="font-weight:bold; font-size:1.2em;">CORPORATE EVENTS | DINNERS | WEDDINGS & BIRTHDAYS | AND MUCH MORE</p>
 </section>
 
-<!-- Gallery Section -->
-<section id="gallery" style="padding:40px 20px; background:#000; color:#fff; text-align:center;">
-  <h2 style="margin-bottom:20px;">Gallery</h2>
-  
-  <div class="slideshow-container" style="position:relative; max-width:600px; margin:auto;">
-    <!-- Slides -->
-    <div class="mySlides" style="display:none;">
-      <img src="images/gallery1.jpg" style="width:100%; border-radius:10px;">
-    </div>
-    <div class="mySlides" style="display:none;">
-      <img src="images/gallery2.jpg" style="width:100%; border-radius:10px;">
-    </div>
-    <div class="mySlides" style="display:none;">
-      <img src="images/gallery3.jpg" style="width:100%; border-radius:10px;">
-    </div>
-    <div class="mySlides" style="display:none;">
-      <img src="images/gallery4.jpg" style="width:100%; border-radius:10px;">
-    </div>
-    <div class="mySlides" style="display:none;">
-      <img src="images/gallery5.jpg" style="width:100%; border-radius:10px;">
-    </div>
-
-    <!-- Navigation arrows -->
-    <a class="prev" onclick="plusSlides(-1)" 
-       style="cursor:pointer; position:absolute; top:50%; left:0; transform:translateY(-50%);
-              font-size:24px; color:white; padding:8px;">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)" 
-       style="cursor:pointer; position:absolute; top:50%; right:0; transform:translateY(-50%);
-              font-size:24px; color:white; padding:8px;">&#10095;</a>
-  </div>
-</section>
-
-<!-- Testimonials Section -->
-<section id="testimonials" style="padding:40px 20px;">
-  <h2 style="text-align:center; margin-bottom:20px;">Testimonials</h2>
-  <div style="display:flex; flex-direction:column; gap:20px;">
-    <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-      <p>"Folake made our wedding unforgettable! Highly professional and engaging."</p>
-      <p style="font-weight:bold; text-align:right;">- Kehinde </p>
-    </div>
-    <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-      <p>"Her energy and charisma are unmatched. She truly owns the stage."</p>
-      <p style="font-weight:bold; text-align:right;">- Alhaji Sarumi </p>
-    </div>
-  </div>
-</section>
-
-<!-- Get in Touch -->
-<section id="get-in-touch" style="background:#000; padding:40px 20px;">
-
-  <!-- Smaller Heading -->
-  <h2 style="background:#FFDB58; color:#000; font-size:1.2em; 
-             padding:6px 12px; border-radius:4px; 
-             display:inline-block; margin-bottom:20px;">
-    Get in Touch
-  </h2>
-
-  <!-- Contact Info -->
-  <div style="display:flex; flex-direction:column; gap:12px; font-size:16px; margin-top:10px; color:#fff;">
-
-    <!-- Phone -->
-    <a href="tel:+2348115077713" 
-       style="color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px;">
-      <i class="fas fa-phone" style="font-size:18px; color:#4CAF50;"></i>
-      (+234) 811 501 7713
-    </a>
-
-    <!-- Email -->
-    <a href="mailto:bookings@folakelaode.com" 
-       style="color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px;">
-      <i class="fas fa-envelope" style="font-size:18px; color:#D44638;"></i>
-      bookings@folakelaode.com
-    </a>
-
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/folakelaode" target="_blank" 
-       style="color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px;">
-      <i class="fab fa-instagram" style="font-size:18px; color:#C13584;"></i>
-      @folakelaode
-    </a>
-
-  </div>
-</section>
-
-<!-- Booking Form Section -->
-<section id="booking" style="padding:40px 20px; background:#f9f9f9;">
-  <h2 style="text-align:center; margin-bottom:20px;">
-    Hire <span style="font-family: 'Dancing Script', cursive; color: orange;">Folake Laode</span> for your next Event</h2>
+<section id="booking" style="background:#f9f9f9;">
+  <h2 style="text-align:center;">Hire <span style="font-family: 'Dancing Script', cursive; color: orange;">Folake Laode</span></h2>
   <form id="bookingForm" style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px;">
-    <label for="name">Full Name <span style="color:red;">*</span></label>
-    <input type="text" id="name" name="name" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
-
-    <label for="email">Email Address <span style="color:red;">*</span></label>
-    <input type="email" id="email" name="email" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
-
-    <label for="phone">Phone Number <span style="color:red;">*</span></label>
-    <input type="tel" id="phone" name="phone" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
-
-    <label for="service">Service Type <span style="color:red;">*</span></label>
-    <select id="service" name="service" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
-      <option value="">Select a service</option>
-      <option value="Corporate Events">Corporate Events</option>
-      <option value="Dinners">Dinners</option>
-      <option value="Book & Product Launches">Book & Product Launches</option>
-      <option value="Reunion Party">Reunion Party</option>
-      <option value="Weddings & BIRTHDAYS">Weddings & BIRTHDAYS</option>
-      <option value="School Functions">School Functions</option>
-      <option value="Other">Other</option>
+    <input type="text" placeholder="Full Name *" required style="padding:12px; border:1px solid #ccc;">
+    <input type="email" placeholder="Email Address *" required style="padding:12px; border:1px solid #ccc;">
+    <input type="tel" placeholder="Phone Number *" required style="padding:12px; border:1px solid #ccc;">
+    <select required style="padding:12px; border:1px solid #ccc;">
+      <option value="">Select Service</option>
+      <option>Wedding</option>
+      <option>Corporate Event</option>
     </select>
-
-    <label for="date">Event Date <span style="color:red;">*</span></label>
-    <input type="date" id="date" name="date" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
-
-    <label for="address">Event Address</label>
-    <input type="text" id="address" name="address" placeholder="City - State - Country" style="padding:10px; border-radius:5px; border:1px solid #ccc;">
-
-    <label for="notes">Additional Information</label>
-    <textarea id="notes" name="notes" rows="4" placeholder="Write any additional information here" style="padding:10px; border-radius:5px; border:1px solid #ccc;"></textarea>
-
-    <button type="submit" style="background:#4CAF50; color:#fff; padding:12px; border:none; border-radius:5px; font-size:1em; cursor:pointer;">Book now</button>
+    <button type="submit" style="background:#4CAF50; color:#fff; padding:15px; border:none; cursor:pointer; font-weight:bold;">SUBMIT BOOKING</button>
   </form>
-  <div id="formMessage" style="margin-top:15px; text-align:center; font-weight:bold;"></div>
 </section>
 
-<!-- Footer -->
 <footer>
   &copy; 2026 Folake Laode. All rights reserved.
 </footer>
 
-<!-- Scripts -->
 <script>
-  // Toggle menu on mobile
   document.getElementById('menu-toggle').addEventListener('click', function() {
     document.getElementById('navbar').classList.toggle('show');
   });
 
-  // Smooth Read more toggle
   const readMoreBtn = document.getElementById("readMoreBtn");
   const moreText = document.getElementById("more-text");
   readMoreBtn.addEventListener("click", function() {
     moreText.classList.toggle("show");
-    readMoreBtn.classList.toggle("active");
-    if (moreText.classList.contains("show")) {
-      readMoreBtn.textContent = "Read Less";
-    } else {
-      readMoreBtn.textContent = "Read More";
-    }
-  });
-
-  // Handle booking form submission
-  document.getElementById('bookingForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Collect form data
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const service = document.getElementById('service').value;
-    const date = document.getElementById('date').value;
-    const address = document.getElementById('address').value.trim();
-    const notes = document.getElementById('notes').value.trim();
-
-    // Basic validation
-    if (!name || !email || !phone || !service || !date) {
-      document.getElementById('formMessage').textContent = "Please fill in all required fields.";
-      document.getElementById('formMessage').style.color = "red";
-      return;
-    }
-
-    // Show success message
-    document.getElementById('formMessage').textContent = "Thank you! Your booking request has been received.";
-    document.getElementById('formMessage').style.color = "green";
-
-    // Reset the form
-    document.getElementById('bookingForm').reset();
+    readMoreBtn.textContent = moreText.classList.contains("show") ? "Read Less" : "Read More";
   });
 </script>
 
