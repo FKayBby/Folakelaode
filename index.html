@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Folake Laode - The Microphone Goddess</title>
+<!-- Google Fonts for stylish typography -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&family=Dancing+Script&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <style>
@@ -22,8 +23,6 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
-    z-index: 10;
   }
 
   .logo {
@@ -48,39 +47,16 @@
     color: #FF8C00;
   }
 
-  /* Hero section - UPDATED FOR FULL SCREEN */
+  /* Hero section */
   .hero {
-    height: 100vh; /* Full screen height */
-    width: 100%;
-    background-image: url('images/hero-banner.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: flex-start; /* Align content to the left */
-    padding: 0 10%; /* Side padding for the button */
-    box-sizing: border-box;
-    margin: 0;
+    text-align: center;
+    padding: 60px 20px;
   }
 
-  /* New Booking Button on Hero */
-  .hero-btn {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    transition: transform 0.3s ease, background-color 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    text-transform: uppercase;
-  }
-
-  .hero-btn:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.05);
+  /* Removed default h1 styling for better layout */
+  .hero h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
   }
 
   /* Section styles */
@@ -223,10 +199,6 @@
     .menu-toggle {
       display: block;
     }
-    .hero {
-      justify-content: center; /* Center button on mobile for better UX */
-      padding: 0 20px;
-    }
   }
 </style>
 </head>
@@ -249,30 +221,22 @@
   </nav>
 </header>
 
+<!-- Hero / Intro Section with your GitHub image -->
 <section class="hero" id="intro">
-  <a href="#booking" class="hero-btn">Book Folake Now</a>
+  <center>
+    <img src="images/hero-banner.jpg" alt="Folake Laode Banner" style="width:100%; max-width:600px; height:auto;">
+  </center>
 </section>
 
-<section id="testimonials" style="padding:40px 20px;">
-  <h2 style="text-align:center; margin-bottom:20px;">Testimonials</h2>
-  <div style="display:flex; flex-direction:column; gap:20px;">
-    <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-      <p>"Folake made our wedding unforgettable! Highly professional and engaging."</p>
-      <p style="font-weight:bold; text-align:right;">- Kehinde Abdulsalam </p>
-    </div>
-    <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-      <p>"Her energy and charisma are unmatched. She truly owns the stage."</p>
-      <p style="font-weight:bold; text-align:right;">- Babatunde Sarumi </p>
-    </div>
-  </div>
-</section>
-
+<!-- About Section -->
 <section id="about">
+  <!-- Profile Photo -->
   <div style="text-align:center; margin-bottom:20px;">
     <img src="images/mypic.jpg" alt="Folake Laode" 
          style="width:100%; max-width:600px; height:auto; object-fit:cover; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
   </div>
 
+  <!-- "Meet Folake Laode" in orange, after the picture -->
   <h1 style="color: orange; font-family: 'Dancing Script', cursive; font-size: 2em; margin-bottom: 10px; text-align: center;">
     Meet Folake Laode
   </h1>
@@ -280,6 +244,7 @@
     Folake Laode is a versatile compere, event host, broadcaster, and voice-over artist whose career reflects depth, diversity, and a lifelong devotion to growth. With a commanding presence, she has hosted dazzling red-carpet events, engaged audiences as a radio personality, and brought structure, warmth, and elegance to weddings, birthdays, and corporate occasions. Her hallmark is authenticity; turning every event into an unforgettable experience.
   </p>
 
+  <!-- Hidden text -->
   <div id="more-text">
     <p>
       A graduate of Computer Science, Folake’s journey has always been anchored in education. She has taught undergraduate students in polytechnic, guiding them through practicals in computer technology, and continues to see teaching as a calling as much as a profession. For her, going to school and pursuing knowledge is not just a path to advancement but a source of joy and fulfillment.
@@ -298,9 +263,11 @@
     </p>
   </div>
 
+  <!-- Button -->
   <button id="readMoreBtn">Read More</button>
 </section>
 
+<!-- Services Section -->
 <section id="services">
   <h2>SERVICES</h2>
   <p style="font-weight:bold; font-size:1.2em; margin:0; letter-spacing:1px;">
@@ -308,10 +275,12 @@
   </p>
 </section>
 
+<!-- Gallery Section -->
 <section id="gallery" style="padding:40px 20px; background:#000; color:#fff; text-align:center;">
   <h2 style="margin-bottom:20px;">Gallery</h2>
   
   <div class="slideshow-container" style="position:relative; max-width:600px; margin:auto;">
+    <!-- Slides -->
     <div class="mySlides" style="display:none;">
       <img src="images/gallery1.jpg" style="width:100%; border-radius:10px;">
     </div>
@@ -328,6 +297,7 @@
       <img src="images/gallery5.jpg" style="width:100%; border-radius:10px;">
     </div>
 
+    <!-- Navigation arrows -->
     <a class="prev" onclick="plusSlides(-1)" 
        style="cursor:pointer; position:absolute; top:50%; left:0; transform:translateY(-50%);
               font-size:24px; color:white; padding:8px;">&#10094;</a>
@@ -337,28 +307,49 @@
   </div>
 </section>
 
+<!-- Testimonials Section -->
+<section id="testimonials" style="padding:40px 20px;">
+  <h2 style="text-align:center; margin-bottom:20px;">Testimonials</h2>
+  <div style="display:flex; flex-direction:column; gap:20px;">
+    <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <p>"Folake made our wedding unforgettable! Highly professional and engaging."</p>
+      <p style="font-weight:bold; text-align:right;">- Kehinde </p>
+    </div>
+    <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <p>"Her energy and charisma are unmatched. She truly owns the stage."</p>
+      <p style="font-weight:bold; text-align:right;">- Alhaji Sarumi </p>
+    </div>
+  </div>
+</section>
+
+<!-- Get in Touch -->
 <section id="get-in-touch" style="background:#000; padding:40px 20px;">
 
+  <!-- Smaller Heading -->
   <h2 style="background:#FFDB58; color:#000; font-size:1.2em; 
              padding:6px 12px; border-radius:4px; 
              display:inline-block; margin-bottom:20px;">
     Get in Touch
   </h2>
 
+  <!-- Contact Info -->
   <div style="display:flex; flex-direction:column; gap:12px; font-size:16px; margin-top:10px; color:#fff;">
 
+    <!-- Phone -->
     <a href="tel:+2348115077713" 
        style="color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px;">
       <i class="fas fa-phone" style="font-size:18px; color:#4CAF50;"></i>
       (+234) 811 501 7713
     </a>
 
+    <!-- Email -->
     <a href="mailto:bookings@folakelaode.com" 
        style="color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px;">
       <i class="fas fa-envelope" style="font-size:18px; color:#D44638;"></i>
       bookings@folakelaode.com
     </a>
 
+    <!-- Instagram -->
     <a href="https://www.instagram.com/folakelaode" target="_blank" 
        style="color:#fff; text-decoration:none; display:flex; align-items:center; gap:8px;">
       <i class="fab fa-instagram" style="font-size:18px; color:#C13584;"></i>
@@ -368,6 +359,7 @@
   </div>
 </section>
 
+<!-- Booking Form Section -->
 <section id="booking" style="padding:40px 20px; background:#f9f9f9;">
   <h2 style="text-align:center; margin-bottom:20px;">
     Hire <span style="font-family: 'Dancing Script', cursive; color: orange;">Folake Laode</span> for your next Event</h2>
@@ -407,10 +399,12 @@
   <div id="formMessage" style="margin-top:15px; text-align:center; font-weight:bold;"></div>
 </section>
 
+<!-- Footer -->
 <footer>
   &copy; 2026 Folake Laode. All rights reserved.
 </footer>
 
+<!-- Scripts -->
 <script>
   // Toggle menu on mobile
   document.getElementById('menu-toggle').addEventListener('click', function() {
@@ -433,41 +427,29 @@
   // Handle booking form submission
   document.getElementById('bookingForm').addEventListener('submit', function(e) {
     e.preventDefault();
+    // Collect form data
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const service = document.getElementById('service').value;
     const date = document.getElementById('date').value;
+    const address = document.getElementById('address').value.trim();
+    const notes = document.getElementById('notes').value.trim();
 
+    // Basic validation
     if (!name || !email || !phone || !service || !date) {
       document.getElementById('formMessage').textContent = "Please fill in all required fields.";
       document.getElementById('formMessage').style.color = "red";
       return;
     }
 
+    // Show success message
     document.getElementById('formMessage').textContent = "Thank you! Your booking request has been received.";
     document.getElementById('formMessage').style.color = "green";
+
+    // Reset the form
     document.getElementById('bookingForm').reset();
   });
-
-  // Gallery Slideshow Logic
-  let slideIndex = 1;
-  showSlides(slideIndex);
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slides[slideIndex-1].style.display = "block";
-  }
 </script>
 
 </body>
