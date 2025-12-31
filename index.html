@@ -68,17 +68,32 @@
 .hero-btn-overlay {
   position: absolute;
   left: 50%;
-  bottom: 90px;                 /* moves it up */
+  bottom: 120px;
   transform: translateX(-50%);
-  background: #ffffff;          /* WHITE background */
-  color: #000000;               /* BLACK text */
-  padding: 10px 20px;           /* smaller size */
-  font-size: 14px;
+  background: #ffffff;
+  color: #000000;
+  padding: 16px 32px;
+  font-size: 16px;
   font-weight: 600;
   text-decoration: none;
   border-radius: 6px;
   transition: background 0.3s ease, color 0.3s ease;
+  text-align: center;
 }
+
+/* Hover effect */
+.hero-btn-overlay:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* ===== Responsive for Mobile ===== */
+@media (max-width: 768px) {
+  .hero-btn-overlay {
+    bottom: 60px;        /* a bit lower on small screens */
+    padding: 12px 24px;  /* slightly smaller */
+    font-size: 14px;
+  }
 
 /* Hover state */
 .hero-btn-overlay:hover {
