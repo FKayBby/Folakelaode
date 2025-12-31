@@ -65,21 +65,23 @@
 }
 
 /* BUTTON OVERLAY */
+/* BUTTON OVERLAY */
 .hero-btn-overlay {
   position: absolute;
-  left: 50%;                /* center horizontally */
-  bottom: 120px;            /* raise up from bottom */
-  transform: translateX(-50%);
-  background: #ffffff;      /* white background */
-  color: #000000;           /* black text */
-  padding: 18px 36px;       /* bigger button */
-  font-size: 18px;          /* bigger font */
+  left: 50%;                /* Centers horizontally */
+  bottom: 50%;              /* Moves it to the middle vertically */
+  transform: translate(-50%, 50%); /* Perfectly centers the element box */
+  background: #ffffff;      
+  color: #000000;           
+  padding: 18px 36px;       
+  font-size: 18px;          
   font-weight: 600;
   text-decoration: none;
   border-radius: 6px;
-  text-align: center;       /* center text inside button */
+  text-align: center;       
   transition: background 0.3s ease, color 0.3s ease;
-  z-index: 10;              /* ensure it’s above image */
+  z-index: 10;              
+  white-space: nowrap;      /* Prevents text wrapping */
 }
 
 /* Hover effect */
@@ -88,12 +90,26 @@
   color: #ffffff;
 }
 
-/* ===== Responsive for Mobile ===== */
+/* Updated Responsive for Mobile */
 @media (max-width: 768px) {
   .hero-btn-overlay {
-    bottom: 80px;          /* slightly lower for mobile */
-    padding: 14px 28px;    /* slightly smaller */
-    font-size: 16px;
+    bottom: 45%;           /* Keeps it raised on mobile */
+    left: 50%;             /* Ensures it stays centered */
+    transform: translate(-50%, 50%);
+    padding: 12px 24px;    
+    font-size: 15px;
+  }
+  
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #ffffff;
+    padding: 10px 0;
+  }
+  
+  nav.show {
+    display: flex;
   }
 
 
