@@ -66,20 +66,23 @@
 /* BUTTON OVERLAY */
 .hero-btn-overlay {
   position: absolute;
-  left: 40px;
-  bottom: 60px;
-  background: #ffffff;
-  color: #000000;
-  padding: 14px 28px;
-  text-decoration: none;
+  left: 50%;
+  bottom: 90px;                 /* moves it up */
+  transform: translateX(-50%);
+  background: #ffffff;          /* WHITE background */
+  color: #000000;               /* BLACK text */
+  padding: 10px 20px;           /* smaller size */
+  font-size: 14px;
   font-weight: 600;
+  text-decoration: none;
   border-radius: 6px;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Hover state */
 .hero-btn-overlay:hover {
-  background: #000;
-  color: #fff;
+  background: #000000;          /* black on hover */
+  color: #ffffff;               /* white text on hover */
 }
 
 /* MOBILE */
