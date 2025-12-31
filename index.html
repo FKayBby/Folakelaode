@@ -67,18 +67,19 @@
 /* BUTTON OVERLAY */
 .hero-btn-overlay {
   position: absolute;
-  left: 50%;
-  bottom: 120px;
+  left: 50%;                /* center horizontally */
+  bottom: 120px;            /* raise up from bottom */
   transform: translateX(-50%);
-  background: #ffffff;
-  color: #000000;
-  padding: 16px 32px;
-  font-size: 16px;
+  background: #ffffff;      /* white background */
+  color: #000000;           /* black text */
+  padding: 18px 36px;       /* bigger button */
+  font-size: 18px;          /* bigger font */
   font-weight: 600;
   text-decoration: none;
   border-radius: 6px;
+  text-align: center;       /* center text inside button */
   transition: background 0.3s ease, color 0.3s ease;
-  text-align: center;
+  z-index: 10;              /* ensure it’s above image */
 }
 
 /* Hover effect */
@@ -90,10 +91,11 @@
 /* ===== Responsive for Mobile ===== */
 @media (max-width: 768px) {
   .hero-btn-overlay {
-    bottom: 60px;        /* a bit lower on small screens */
-    padding: 12px 24px;  /* slightly smaller */
-    font-size: 14px;
+    bottom: 80px;          /* slightly lower for mobile */
+    padding: 14px 28px;    /* slightly smaller */
+    font-size: 16px;
   }
+
 
 /* Hover state */
 .hero-btn-overlay:hover {
