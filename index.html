@@ -258,6 +258,21 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Booking form button */
+.booking-btn {
+  background: red;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.booking-btn:hover {
+  background: darkred;
+}
 </style>
 </head>
 <body>
@@ -455,7 +470,7 @@
     <label for="notes">Additional Information</label>
     <textarea id="notes" name="notes" rows="4" placeholder="Write any additional information here" style="padding:10px; border-radius:5px; border:1px solid #ccc;"></textarea>
 
-    <button type="submit" style="background:#4CAF50; color:#fff; padding:12px; border:none; border-radius:5px; font-size:1em; cursor:pointer;">Book now</button>
+    <button type="submit" class="booking-btn">Book now</button>
   </form>
   <div id="formMessage" style="margin-top:15px; text-align:center; font-weight:bold;"></div>
 </section>
